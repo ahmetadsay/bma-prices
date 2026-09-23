@@ -1,0 +1,130 @@
+[
+  {
+    "key": "sleep-republic",
+    "name": "Sleep Republic",
+    "review": "sleep-republic-mattress-review",
+    "url": "https://www.sleeprepublic.com.au/products/sleep-republic-mattress",
+    "variant": 50051219816743,
+    "size": "Queen"
+  },
+  {
+    "key": "sleep-republic-es",
+    "name": "Sleep Republic ES",
+    "review": "sleep-republic-es-review",
+    "url": "https://www.sleeprepublic.com.au/products/sleeprepublic-mattress-es",
+    "variant": 50079892242727,
+    "size": "Queen"
+  },
+  {
+    "key": "sleep-republic-luxe",
+    "name": "Sleep Republic LUXE",
+    "review": "sleep-republic-luxe-review",
+    "url": "https://www.sleeprepublic.com.au/products/sr-luxe-mattress",
+    "variant": 50079908790567,
+    "size": "Queen"
+  },
+  {
+    "key": "sleep-firm",
+    "name": "Sleep Firm",
+    "review": "sleep-firm-mattress-review",
+    "url": "https://www.sleepfirm.com.au/products/sleep-firm-mattress",
+    "variant": 46212986962097,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla",
+    "name": "Yinahla Premier Luxe",
+    "review": "yinahla-mattress-review",
+    "url": "https://yinahla.com.au/products/yinahla-premier-luxe-mattress",
+    "variant": 51044201791620,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla-premier-firm",
+    "name": "Yinahla Premier Firm",
+    "review": "",
+    "url": "https://yinahla.com.au/products/yinahla-premier-firm-mattress",
+    "variant": 51044200972420,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla-classic-comfort",
+    "name": "Yinahla Classic Comfort",
+    "review": "",
+    "url": "https://yinahla.com.au/products/yinahla-classic-comfort-mattress",
+    "variant": 51044202348676,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla-visco-flex",
+    "name": "Yinahla Visco Flex",
+    "review": "",
+    "url": "https://yinahla.com.au/products/yinahla-visco-flex-mattress",
+    "variant": 51044200415364,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla-natural-latex",
+    "name": "Yinahla Natural Latex",
+    "review": "",
+    "url": "https://yinahla.com.au/products/yinahla-natural-latex-mattress",
+    "variant": 51044201529476,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla-copper-gel",
+    "name": "Yinahla Copper Gel",
+    "review": "",
+    "url": "https://yinahla.com.au/products/yinahla-copper-gel-mattress",
+    "variant": 51044199235716,
+    "size": "Queen"
+  },
+  {
+    "key": "yinahla-posture-cloud-gel",
+    "name": "Yinahla Posture Cloud Gel",
+    "review": "",
+    "url": "https://yinahla.com.au/products/yinahla-posture-gel-mattress",
+    "variant": 51044200153220,
+    "size": "Queen"
+  },
+  {
+    "key": "luxara",
+    "name": "Luxara Platinum",
+    "review": "luxara-mattress-review",
+    "url": "https://luxara.com.au/products/luxara-platinum-mattress",
+    "variant": 42360087740670,
+    "size": "Queen"
+  },
+  {
+    "key": "peace-lily",
+    "name": "Peace Lily Hybrid",
+    "review": "peace-lily-mattress-review",
+    "url": "https://peacelily.com.au/products/hybrid-mattress",
+    "variant": 42297462718644,
+    "size": "Queen"
+  },
+  {
+    "key": "peace-lily-latex",
+    "name": "Peace Lily Latex",
+    "review": "",
+    "url": "https://peacelily.com.au/products/latex-mattress",
+    "variant": 12472439668806,
+    "size": "Queen"
+  },
+  {
+    "key": "koala",
+    "name": "Koala Mattress",
+    "review": "koala-mattress-review-2026-is-australias-most-popular-mattress-worth-it",
+    "url": "https://au.koala.com/products/koala-mattress",
+    "variant": 42883804201096,
+    "size": "Queen"
+  },
+  {
+    "key": "koala-plus",
+    "name": "Koala Plus",
+    "review": "",
+    "url": "https://au.koala.com/products/koala-plus-mattress",
+    "variant": 42883799548040,
+    "size": "Queen"
+  }
+]
