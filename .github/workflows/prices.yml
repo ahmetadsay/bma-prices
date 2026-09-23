@@ -4,17 +4,20 @@ on:
   schedule:
     - cron: "0 19 */3 * *"     # 05:00 in Sydney, every third day
   workflow_dispatch:            # the "Run workflow" button, for a check on demand
+  push:                         # and whenever the bot itself changes
+    branches: [main]
+    paths: [fetch_prices.py, extract.js, products.json, .github/workflows/prices.yml]
 
 permissions:
   contents: write
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04     # pinned: Playwright 1.47 predates Ubuntu 26
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install browser

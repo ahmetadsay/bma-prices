@@ -27,6 +27,7 @@ import json
 import pathlib
 import sys
 import urllib.request
+from urllib.parse import urlparse
 
 HERE = pathlib.Path(__file__).parent
 OUT = HERE / "prices.json"
@@ -58,7 +59,17 @@ def main():
         from playwright.sync_api import sync_playwright
         pw = sync_playwright().start()
         browser = pw.chromium.launch()
-        page = browser.new_page(user_agent=UA, locale="en-AU")
+        context = browser.new_context(user_agent=UA, locale="en-AU", timezone_id="Australia/Sydney")
+        # GitHub's runners are in the US, and Shopify serves a US visitor a
+        # different market with different promotions. These are the cookies an
+        # Australian visitor carries; they select the AU market.
+        cookies = []
+        for host in {urlparse(p["url"]).hostname for p in products}:
+            domain = "." + (host[4:] if host.startswith("www.") else host)
+            for name, value in (("localization", "AU"), ("cart_currency", "AUD")):
+                cookies.append({"name": name, "value": value, "domain": domain, "path": "/"})
+        context.add_cookies(cookies)
+        page = context.new_page()
 
     brands, failures = {}, []
     for p in products:
@@ -76,8 +87,14 @@ def main():
             try:
                 page.goto(f"{p['url']}?variant={p['variant']}", wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(4000)   # the stores' discount scripts run after load
-                shelf = page.evaluate(extract, rrp)["price"]
-                method = "browser" if shelf else "server"
+                result = page.evaluate(extract, rrp)
+                country = result.get("country")
+                if country and country != "AU":
+                    # Read in the wrong market: that is some other country's price.
+                    failures.append(f"{key}: served market {country}, not AU")
+                else:
+                    shelf = result["price"]
+                    method = "browser" if shelf else "server"
             except Exception as e:  # noqa: BLE001
                 failures.append(f"{key}: page — {e}")
 
@@ -118,6 +135,7 @@ def main():
                    "`sale` is the price a shopper saw on the rendered product page, "
                    "present only when it was below the list price `rrp`.",
         "_checked": today.isoformat(),
+        "_generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "brands": brands,
     }, indent=2) + "\n")
 

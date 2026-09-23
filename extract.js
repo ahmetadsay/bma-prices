@@ -47,5 +47,10 @@
   }
 
   const live = seen.filter((x) => !x.struck && x.value >= rrp * 0.5 && x.value <= rrp * 1.001);
-  return { price: live.length ? live[0].value : null, seen: seen.slice(0, 8) };
+  // Which Shopify market served this page. Sleep Collective shows different
+  // promotions per market — measured 2026-09-24, a US visitor saw Yinahla 20%
+  // off and Sleep Firm full price, an Australian the exact reverse.
+  const country = (window.Shopify && window.Shopify.country) || null;
+
+  return { price: live.length ? live[0].value : null, country, seen: seen.slice(0, 8) };
 }
