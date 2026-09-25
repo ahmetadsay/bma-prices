@@ -88,6 +88,12 @@ def main():
                 page.goto(f"{p['url']}?variant={p['variant']}", wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(4000)   # the stores' discount scripts run after load
                 result = page.evaluate(extract, rrp)
+                if not result.get("price") or result["price"] >= rrp:
+                    # No discount yet. The discount apps sometimes finish late,
+                    # and a missed discount would publish the list price, so
+                    # look once more before believing it.
+                    page.wait_for_timeout(8000)
+                    result = page.evaluate(extract, rrp)
                 country = result.get("country")
                 if country and country != "AU":
                     # Read in the wrong market: that is some other country's price.
