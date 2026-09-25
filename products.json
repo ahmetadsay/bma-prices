@@ -32,6 +32,22 @@
     "size": "Queen"
   },
   {
+    "key": "sleep-firm-ultra",
+    "name": "Sleep Firm Ultra",
+    "review": "sleep-firm-mattress-review",
+    "url": "https://www.sleepfirm.com.au/products/sleep-firm-ultra",
+    "variant": 46234418249905,
+    "size": "Queen"
+  },
+  {
+    "key": "sleep-firm-luxe",
+    "name": "Sleep Firm Luxe",
+    "review": "sleep-firm-mattress-review",
+    "url": "https://www.sleepfirm.com.au/products/sleep-firm-luxe",
+    "variant": 46234950697137,
+    "size": "Queen"
+  },
+  {
     "key": "yinahla",
     "name": "Yinahla Premier Luxe",
     "review": "yinahla-mattress-review",
@@ -93,6 +109,14 @@
     "review": "luxara-mattress-review",
     "url": "https://luxara.com.au/products/luxara-platinum-mattress",
     "variant": 42360087740670,
+    "size": "Queen"
+  },
+  {
+    "key": "luxara-classic",
+    "name": "Luxara Classic",
+    "review": "luxara-mattress-review",
+    "url": "https://luxara.com.au/products/luxara-classic-mattress",
+    "variant": 42361456361726,
     "size": "Queen"
   },
   {
