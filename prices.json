@@ -1,7 +1,7 @@
 {
   "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. `sale` is the price a shopper saw on the rendered product page, present only when it was below the list price `rrp`.",
   "_checked": "2026-09-25",
-  "_generated_at": "2026-09-25T00:32:24Z",
+  "_generated_at": "2026-09-25T00:37:07Z",
   "brands": {
     "sleep-republic": {
       "name": "Sleep Republic",
@@ -9,7 +9,7 @@
       "review": "sleep-republic-mattress-review",
       "source": "https://www.sleeprepublic.com.au/products/sleep-republic-mattress",
       "rrp": 1660,
-      "sale": null,
+      "sale": 1328,
       "method": "browser",
       "read": "2026-09-25"
     },
@@ -29,7 +29,7 @@
       "review": "sleep-republic-luxe-review",
       "source": "https://www.sleeprepublic.com.au/products/sr-luxe-mattress",
       "rrp": 2360,
-      "sale": null,
+      "sale": 1888,
       "method": "browser",
       "read": "2026-09-25"
     },
