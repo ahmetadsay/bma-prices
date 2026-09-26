@@ -2,7 +2,7 @@
 
 Reads the Queen price a shopper actually sees for each mattress reviewed on
 [BestMattressAustralia.com.au](https://bestmattressaustralia.com.au), every
-third day, and publishes it as `prices.json`. The site reads that file.
+day, and publishes it as `prices.json`. The site reads that file.
 
 It uses a real browser because some stores apply their sale in the page after it
 loads, so their product data alone shows the list price, not the price you pay.
