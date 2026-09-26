@@ -13,3 +13,7 @@ loads, so their product data alone shows the list price, not the price you pay.
 - `fetch_prices.py` — the run. `--no-browser` for a quick local check.
 - `.github/workflows/prices.yml` — the schedule. **Actions → Check prices → Run
   workflow** runs it now.
+
+## history.json
+
+Every reading the bot has made, per product and date, as `[rrp, sale]` (`sale` is `null` when no discount was showing). A later run on the same day replaces the earlier one. Seeded from the commit history of `prices.json` back to 2026-09-23.

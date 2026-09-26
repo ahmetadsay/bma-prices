@@ -2,7 +2,7 @@ name: Check prices
 
 on:
   schedule:
-    - cron: "0 19 */3 * *"     # 05:00 in Sydney, every third day
+    - cron: "0 19 * * *"       # 05:00 in Sydney, daily — price history needs the resolution
   workflow_dispatch:            # the "Run workflow" button, for a check on demand
   push:                         # and whenever the bot itself changes
     branches: [main]
@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "price-bot"
           git config user.email "price-bot@users.noreply.github.com"
-          git add prices.json
+          git add prices.json history.json
           git commit -m "prices: $(date -u +%Y-%m-%d)" || echo "nothing changed"
           git push

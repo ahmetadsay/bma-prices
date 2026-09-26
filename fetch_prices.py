@@ -31,6 +31,7 @@ from urllib.parse import urlparse
 
 HERE = pathlib.Path(__file__).parent
 OUT = HERE / "prices.json"
+HISTORY = HERE / "history.json"
 STALE_DAYS = 7
 MAX_FAILURES = 3          # more than this and the run goes red, so someone looks
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
@@ -144,6 +145,20 @@ def main():
         "_generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "brands": brands,
     }, indent=2) + "\n")
+
+    # One point per product per reading date. A carried entry is an older
+    # reading already on file, so it adds nothing; a later run on the same day
+    # replaces the earlier one, which is how a misread gets corrected.
+    history = json.loads(HISTORY.read_text()) if HISTORY.exists() else {}
+    series = history.setdefault("brands", {})
+    for key, entry in brands.items():
+        if entry.get("method") == "carried":
+            continue
+        series.setdefault(key, {})[entry["read"]] = [entry["rrp"], entry["sale"]]
+    history["_readme"] = ("Every reading fetch_prices.py has made, by product and date: "
+                          "[rrp, sale]. sale is null when no discount was showing.")
+    history["brands"] = {k: dict(sorted(v.items())) for k, v in sorted(series.items())}
+    HISTORY.write_text(json.dumps(history, indent=1) + "\n")
 
     print(f"\n{len(brands)} written, {len(failures)} failed")
     for f in failures:
