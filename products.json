@@ -198,5 +198,53 @@
     "url": "https://peacelily.com.au/products/adjustable-bed",
     "variant": 20580498014278,
     "size": "Queen"
+  },
+  {
+    "key": "sr-bamboo-sheets",
+    "name": "Sleep Republic Bamboo Bed Sheets",
+    "review": "best-bed-sheets-australia",
+    "url": "https://www.sleeprepublic.com.au/products/bamboo-bed-sheets",
+    "variant": 50051148349735,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-bamboo-sheets",
+    "name": "Bedding Co Organic Bamboo Sheet Set",
+    "review": "best-bed-sheets-australia",
+    "url": "https://www.beddingco.com.au/products/organic-bamboo-sheet-set-350-thread-count-white",
+    "variant": 47734288646446,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-egyptian-sheets",
+    "name": "Bedding Co 1200TC Egyptian Cotton Sheet Set",
+    "review": "best-bed-sheets-australia",
+    "url": "https://www.beddingco.com.au/products/1200-thread-count-egyptian-cotton-sheet-set-white",
+    "variant": 47734883746094,
+    "size": "Queen"
+  },
+  {
+    "key": "pl-sheets",
+    "name": "Peace Lily Organic Egyptian Cotton Sheet Set",
+    "review": "best-bed-sheets-australia",
+    "url": "https://peacelily.com.au/products/bed-sheet-set",
+    "variant": 40547304112308,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-linen-sheets",
+    "name": "Bedding Co French Flax Linen Sheet Set",
+    "review": "best-bed-sheets-australia",
+    "url": "https://www.beddingco.com.au/products/100-french-flax-linen-sheet-set-white",
+    "variant": 47733829206318,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-silk-sheets",
+    "name": "Bedding Co Mulberry Silk Sheet Set 22 Momme",
+    "review": "best-bed-sheets-australia",
+    "url": "https://www.beddingco.com.au/products/100-mulberry-silk-sheet-set-22-momme-white",
+    "variant": 50824043987246,
+    "size": "Queen"
   }
 ]
