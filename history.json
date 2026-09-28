@@ -1,6 +1,30 @@
 {
  "_readme": "Every reading fetch_prices.py has made, by product and date: [rrp, sale]. sale is null when no discount was showing.",
  "brands": {
+  "bc-bamboo-sheets": {
+   "2026-09-28": [
+    295,
+    177
+   ]
+  },
+  "bc-egyptian-sheets": {
+   "2026-09-28": [
+    429,
+    257
+   ]
+  },
+  "bc-linen-sheets": {
+   "2026-09-28": [
+    555,
+    333
+   ]
+  },
+  "bc-silk-sheets": {
+   "2026-09-28": [
+    1669,
+    1001
+   ]
+  },
   "bc-timber-frame": {
    "2026-09-28": [
     1739,
@@ -143,6 +167,12 @@
     null
    ]
   },
+  "pl-sheets": {
+   "2026-09-28": [
+    329,
+    null
+   ]
+  },
   "sf-deluxe-frame": {
    "2026-09-28": [
     1648,
@@ -271,6 +301,12 @@
    "2026-09-28": [
     2360,
     1888
+   ]
+  },
+  "sr-bamboo-sheets": {
+   "2026-09-28": [
+    260,
+    208
    ]
   },
   "sr-deluxe-base": {
