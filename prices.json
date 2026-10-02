@@ -1,7 +1,7 @@
 {
   "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. `sale` is the price a shopper saw on the rendered product page, present only when it was below the list price `rrp`.",
-  "_checked": "2026-10-01",
-  "_generated_at": "2026-10-01T23:04:45Z",
+  "_checked": "2026-10-02",
+  "_generated_at": "2026-10-02T22:54:47Z",
   "brands": {
     "sleep-republic": {
       "name": "Sleep Republic",
@@ -11,7 +11,7 @@
       "rrp": 1660,
       "sale": 1328,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sleep-republic-es": {
       "name": "Sleep Republic ES",
@@ -21,7 +21,7 @@
       "rrp": 1260,
       "sale": 1008,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sleep-republic-luxe": {
       "name": "Sleep Republic LUXE",
@@ -31,7 +31,7 @@
       "rrp": 2360,
       "sale": 1888,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sleep-firm": {
       "name": "Sleep Firm",
@@ -41,7 +41,7 @@
       "rrp": 1560,
       "sale": 1248,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sleep-firm-ultra": {
       "name": "Sleep Firm Ultra",
@@ -51,7 +51,7 @@
       "rrp": 2060,
       "sale": 1648,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sleep-firm-luxe": {
       "name": "Sleep Firm Luxe",
@@ -61,7 +61,7 @@
       "rrp": 2660,
       "sale": 2128,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla": {
       "name": "Yinahla Premier Luxe",
@@ -71,7 +71,7 @@
       "rrp": 6960,
       "sale": 5568,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla-premier-firm": {
       "name": "Yinahla Premier Firm",
@@ -81,7 +81,7 @@
       "rrp": 6460,
       "sale": 5168,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla-classic-comfort": {
       "name": "Yinahla Classic Comfort",
@@ -91,7 +91,7 @@
       "rrp": 4360,
       "sale": 3488,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla-visco-flex": {
       "name": "Yinahla Visco Flex",
@@ -101,7 +101,7 @@
       "rrp": 4660,
       "sale": 3728,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla-natural-latex": {
       "name": "Yinahla Natural Latex",
@@ -111,7 +111,7 @@
       "rrp": 4860,
       "sale": 3888,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla-copper-gel": {
       "name": "Yinahla Copper Gel",
@@ -121,7 +121,7 @@
       "rrp": 5360,
       "sale": 4288,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "yinahla-posture-cloud-gel": {
       "name": "Yinahla Posture Cloud Gel",
@@ -131,7 +131,7 @@
       "rrp": 5860,
       "sale": 4688,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "luxara": {
       "name": "Luxara Platinum",
@@ -141,7 +141,7 @@
       "rrp": 2990,
       "sale": 2490,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "luxara-classic": {
       "name": "Luxara Classic",
@@ -151,7 +151,7 @@
       "rrp": 2490,
       "sale": 1890,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "peace-lily": {
       "name": "Peace Lily Hybrid",
@@ -161,7 +161,7 @@
       "rrp": 1199,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "peace-lily-latex": {
       "name": "Peace Lily Latex",
@@ -171,7 +171,7 @@
       "rrp": 1699,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "koala": {
       "name": "Koala Mattress",
@@ -181,7 +181,7 @@
       "rrp": 1249,
       "sale": 999,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "koala-plus": {
       "name": "Koala Plus",
@@ -191,7 +191,7 @@
       "rrp": 1650,
       "sale": 1320,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sr-deluxe-frame": {
       "name": "Sleep Republic Deluxe Bed Frame & Bedhead",
@@ -201,7 +201,7 @@
       "rrp": 1720,
       "sale": 1376,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sf-deluxe-frame": {
       "name": "Sleep Firm Deluxe Bed Frame",
@@ -211,7 +211,7 @@
       "rrp": 1648,
       "sale": 1318,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sr-deluxe-base": {
       "name": "Sleep Republic Deluxe Bed Base",
@@ -221,7 +221,7 @@
       "rrp": 660,
       "sale": 528,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "bc-timber-frame": {
       "name": "Bedding Co Timber Bed Frame",
@@ -231,7 +231,7 @@
       "rrp": 1739,
       "sale": 1043,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "bc-velvet-base": {
       "name": "Bedding Co Velvet Luxe Bed Base",
@@ -241,7 +241,7 @@
       "rrp": 579,
       "sale": 347,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "pl-adjustable": {
       "name": "Peace Lily Adjustable Bed",
@@ -251,7 +251,7 @@
       "rrp": 1499,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "sr-bamboo-sheets": {
       "name": "Sleep Republic Bamboo Bed Sheets",
@@ -261,7 +261,7 @@
       "rrp": 260,
       "sale": 208,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "bc-bamboo-sheets": {
       "name": "Bedding Co Organic Bamboo Sheet Set",
@@ -271,7 +271,7 @@
       "rrp": 295,
       "sale": 177,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "bc-egyptian-sheets": {
       "name": "Bedding Co 1200TC Egyptian Cotton Sheet Set",
@@ -281,7 +281,7 @@
       "rrp": 429,
       "sale": 257,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "pl-sheets": {
       "name": "Peace Lily Organic Egyptian Cotton Sheet Set",
@@ -291,7 +291,7 @@
       "rrp": 329,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "bc-linen-sheets": {
       "name": "Bedding Co French Flax Linen Sheet Set",
@@ -301,7 +301,7 @@
       "rrp": 555,
       "sale": 333,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     },
     "bc-silk-sheets": {
       "name": "Bedding Co Mulberry Silk Sheet Set 22 Momme",
@@ -311,7 +311,7 @@
       "rrp": 1669,
       "sale": 1001,
       "method": "browser",
-      "read": "2026-10-01"
+      "read": "2026-10-02"
     }
   }
 }
