@@ -152,6 +152,61 @@
     "size": "Queen"
   },
   {
+    "key": "emma",
+    "name": "Emma Comfort",
+    "review": "emma-mattress-review-2026-australias-best-cooling-mattress",
+    "url": "https://www.emma-sleep.com.au/emma-comfort-mattress/",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\| Queen$",
+    "no_was": true,
+    "note": "Selling price only. The Federal Court (24 April 2026, $15m) found Emma's strikethrough 'was' prices misleading, so its reference price is not repeated."
+  },
+  {
+    "key": "ecosa",
+    "name": "Ecosa Mattress",
+    "review": "ecosa-mattress-review-2026-is-the-adjustable-firmness-worth-it",
+    "url": "https://www.ecosa.com.au/ecosa-mattress",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\(Queen / Original Edition\\)"
+  },
+  {
+    "key": "origin",
+    "name": "Origin Hybrid",
+    "review": "origin-mattress-review",
+    "url": "https://originmattress.com.au/product/origin-hybrid-mattress/",
+    "size": "Queen",
+    "reader": "woocommerce",
+    "match": "^Queen"
+  },
+  {
+    "key": "onebed",
+    "name": "OneBed Original",
+    "review": "onebed-mattress-review",
+    "url": "https://onebed.com.au/products/onebed-original",
+    "variant": 43277995966573,
+    "size": "Queen"
+  },
+  {
+    "key": "sleeping-duck",
+    "name": "Sleeping Duck",
+    "review": "sleeping-duck-mattress-review",
+    "url": "https://www.sleepingduck.com/au/mattress/buy/",
+    "size": "Queen",
+    "reader": "nextjs",
+    "sku": "SDMAT-QN-MED"
+  },
+  {
+    "key": "ergoflex",
+    "name": "Ergoflex Memory Foam",
+    "review": "ergoflex-mattress-review",
+    "url": "https://www.ergoflex.com.au/memory-foam-mattress",
+    "size": "Queen",
+    "reader": "ergoflex",
+    "sku": "430"
+  },
+  {
     "key": "sr-deluxe-frame",
     "name": "Sleep Republic Deluxe Bed Frame & Bedhead",
     "review": "best-bed-base-australia",

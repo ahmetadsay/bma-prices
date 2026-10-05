@@ -13,6 +13,12 @@ Two readings per product:
 
 `sale` is written only when the shelf price is lower than the list price.
 
+Stores that are not on Shopify (Emma, Ecosa, Origin, Sleeping Duck, Ergoflex,
+added 2026-10-05) carry a "reader" in products.json instead of a variant id.
+Their Queen price comes straight from data the page itself ships — JSON-LD,
+WooCommerce's variation list, Next.js page data or Ergoflex's basket data —
+see page_price(). No browser is needed for them; method is "page".
+
 If a page cannot be read, the last good reading is kept for up to seven days.
 After that the product falls back to its list price with no sale, because an
 old sale price may have ended and the safe mistake is to quote too high, never
@@ -23,8 +29,10 @@ too low.
 """
 
 import datetime as dt
+import html as htmllib
 import json
 import pathlib
+import re
 import sys
 import urllib.request
 from urllib.parse import urlparse
@@ -48,6 +56,93 @@ def list_price(product):
     raise ValueError(f"variant {product['variant']} not found")
 
 
+def fetch_html(url):
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-AU"})
+    return urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "replace")
+
+
+def _ld_products(html):
+    """Every schema.org Product in the page's JSON-LD, ProductGroup variants included."""
+    found = []
+
+    def walk(o):
+        if isinstance(o, dict):
+            if o.get("@type") == "Product":
+                found.append(o)
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+
+    for block in re.findall(r'<script[^>]*application/ld\+json[^>]*>(.*?)</script>', html, re.S):
+        try:
+            walk(json.loads(block))
+        except ValueError:
+            continue
+    return found
+
+
+def page_price(p):
+    """(rrp, sale) for a store that is not on Shopify, read from data the page
+    itself carries, so no browser is needed. Each reader names the one place in
+    that store's HTML where the Queen price lives. sale is None when no discount
+    shows. "no_was": true records the selling price only, and never the store's
+    own "was" figure (see Emma in products.json)."""
+    html = fetch_html(p["url"])
+    reader = p["reader"]
+    rrp = sale = None
+
+    if reader == "jsonld":
+        # A Product (or ProductGroup variant) whose name matches, e.g. "| Queen".
+        for prod in _ld_products(html):
+            if re.search(p["match"], prod.get("name", "")):
+                offer = prod.get("offers") or {}
+                offer = offer[0] if isinstance(offer, list) else offer
+                price = float(offer["price"])
+                was = None
+                spec = offer.get("priceSpecification") or []
+                for s in spec if isinstance(spec, list) else [spec]:
+                    if "Strikethrough" in str(s.get("priceType", "")):
+                        was = float(s["price"])
+                rrp, sale = (was, price) if was and was > price else (price, None)
+                break
+
+    elif reader == "woocommerce":
+        # WooCommerce's variation list: display_price is what the shopper pays.
+        m = re.search(r'data-product_variations="([^"]*)"', html)
+        for v in json.loads(htmllib.unescape(m.group(1))) if m else []:
+            if any(re.search(p["match"], str(a)) for a in v.get("attributes", {}).values()):
+                price, regular = float(v["display_price"]), float(v["display_regular_price"])
+                rrp, sale = (regular, price) if regular > price else (price, None)
+                break
+
+    elif reader == "nextjs":
+        # Next.js page data: a variants list keyed by SKU.
+        m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+        for v in re.finditer(r'\{"price":(\d+(?:\.\d+)?),"options":\{[^}]*\},"sku":"([^"]+)"', m.group(1) if m else ""):
+            if v.group(2) == p["sku"]:
+                rrp = float(v.group(1))
+                break
+
+    elif reader == "ergoflex":
+        # Ergoflex's basket data: {"<id>":{"ID":"<id>","RRP":..,"Price":..,"ReducedPrice":..}}
+        m = re.search(r'"%s":\{"ID":"%s",(.*?)\}' % (p["sku"], p["sku"]), html)
+        if m:
+            data = json.loads("{" + m.group(1) + "}")
+            full = max(float(data.get("RRP") or 0), float(data.get("Price") or 0))
+            reduced = float(data.get("ReducedPrice") or 0)
+            rrp, sale = (full, reduced) if 0 < reduced < full else (full, None)
+
+    if rrp is None:
+        raise ValueError(f"{reader}: no Queen price found")
+    if p.get("no_was"):
+        rrp, sale = (sale or rrp), None
+    if not 200 <= (sale or rrp) <= 10000:
+        raise ValueError(f"{reader}: implausible price {sale or rrp}")
+    return rrp, sale
+
+
 def main():
     use_browser = "--no-browser" not in sys.argv
     products = json.loads((HERE / "products.json").read_text())
@@ -65,7 +160,7 @@ def main():
         # different market with different promotions. These are the cookies an
         # Australian visitor carries; they select the AU market.
         cookies = []
-        for host in {urlparse(p["url"]).hostname for p in products}:
+        for host in {urlparse(p["url"]).hostname for p in products if not p.get("reader")}:
             domain = "." + (host[4:] if host.startswith("www.") else host)
             for name, value in (("localization", "AU"), ("cart_currency", "AUD")):
                 cookies.append({"name": name, "value": value, "domain": domain, "path": "/"})
@@ -75,6 +170,25 @@ def main():
     brands, failures = {}, []
     for p in products:
         key = p["key"]
+        if p.get("reader"):
+            # Not on Shopify: one reading straight from the page's own data.
+            try:
+                rrp, sale = page_price(p)
+            except Exception as e:  # noqa: BLE001
+                failures.append(f"{key}: page data — {e}")
+                if key in previous:
+                    brands[key] = previous[key]
+                continue
+            brands[key] = {
+                "name": p["name"], "size": p["size"], "review": p["review"],
+                "source": p["url"], "rrp": round(rrp),
+                "sale": round(sale) if sale else None,
+                "method": "page", "read": today.isoformat(),
+            }
+            entry = brands[key]
+            shown = f"${entry['sale']:,} (list ${entry['rrp']:,})" if entry["sale"] else f"${entry['rrp']:,}"
+            print(f"  {key:28} {shown:26} page")
+            continue
         try:
             rrp, server_price = list_price(p)
         except Exception as e:  # noqa: BLE001
