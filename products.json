@@ -177,8 +177,8 @@
     "review": "origin-mattress-review",
     "url": "https://originmattress.com.au/product/origin-hybrid-mattress/",
     "size": "Queen",
-    "reader": "woocommerce",
-    "match": "^Queen"
+    "reader": "wcstore",
+    "variant": 110967
   },
   {
     "key": "onebed",

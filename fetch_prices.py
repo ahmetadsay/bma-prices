@@ -89,11 +89,21 @@ def page_price(p):
     that store's HTML where the Queen price lives. sale is None when no discount
     shows. "no_was": true records the selling price only, and never the store's
     own "was" figure (see Emma in products.json)."""
-    html = fetch_html(p["url"])
     reader = p["reader"]
     rrp = sale = None
+    # wcstore reads JSON, not the page: WooCommerce's public Store API for one
+    # variation. Origin's product page came back from GitHub's US runner without
+    # its variation list on 2026-10-06; the API answers the same either way.
+    html = "" if reader == "wcstore" else fetch_html(p["url"])
 
-    if reader == "jsonld":
+    if reader == "wcstore":
+        api = "{0.scheme}://{0.netloc}/wp-json/wc/store/v1/products/{1}".format(urlparse(p["url"]), p["variant"])
+        prices = json.loads(fetch_html(api))["prices"]
+        unit = 10 ** int(prices.get("currency_minor_unit", 2))
+        price, regular = int(prices["price"]) / unit, int(prices["regular_price"]) / unit
+        rrp, sale = (regular, price) if regular > price else (price, None)
+
+    elif reader == "jsonld":
         # A Product (or ProductGroup variant) whose name matches, e.g. "| Queen".
         for prod in _ld_products(html):
             if re.search(p["match"], prod.get("name", "")):

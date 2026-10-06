@@ -9,8 +9,8 @@ loads, so their product data alone shows the list price, not the price you pay.
 
 - `products.json` — what to check. Add a Shopify product by adding its store URL
   and the Queen variant id. A store that is not on Shopify gets a `reader`
-  instead (`jsonld`, `woocommerce`, `nextjs` or `ergoflex`) plus the `match` or
-  `sku` that picks out its Queen price; see `page_price()` in `fetch_prices.py`.
+  instead (`jsonld`, `woocommerce`, `wcstore`, `nextjs` or `ergoflex`) plus the `match`,
+  `sku` or `variant` that picks out its Queen price; see `page_price()` in `fetch_prices.py`.
   `no_was: true` records the selling price only and never the store's own
   "was" price.
 - `extract.js` — how the price is read off the page.
