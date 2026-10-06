@@ -172,6 +172,15 @@
     "match": "\\(Queen / Original Edition\\)"
   },
   {
+    "key": "ecosa-truefirm",
+    "name": "Ecosa TrueFirm",
+    "review": "ecosa-mattress-review-2026-is-the-adjustable-firmness-worth-it",
+    "url": "https://www.ecosa.com.au/truefirm-mattress",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\(Queen\\)$"
+  },
+  {
     "key": "origin",
     "name": "Origin Hybrid",
     "review": "origin-mattress-review",
