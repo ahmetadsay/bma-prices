@@ -152,6 +152,14 @@
     "size": "Queen"
   },
   {
+    "key": "koala-luxe",
+    "name": "Koala Luxe",
+    "review": "",
+    "url": "https://au.koala.com/products/koala-luxe-mattress",
+    "variant": 42883804430472,
+    "size": "Queen"
+  },
+  {
     "key": "emma",
     "name": "Emma Comfort",
     "review": "emma-mattress-review-2026-australias-best-cooling-mattress",
@@ -161,6 +169,17 @@
     "match": "\\| Queen$",
     "no_was": true,
     "note": "Selling price only. The Federal Court (24 April 2026, $15m) found Emma's strikethrough 'was' prices misleading, so its reference price is not repeated."
+  },
+  {
+    "key": "emma-luxe",
+    "name": "Emma Luxe",
+    "review": "",
+    "url": "https://www.emma-sleep.com.au/emma-luxe-mattress/",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "^Emma Queen Luxe Mattress$",
+    "no_was": true,
+    "note": "Emma's premium model since the Diamond Hybrid left the range (checked 2026-10-12). Selling price only, as for the Emma Comfort."
   },
   {
     "key": "ecosa",
@@ -181,6 +200,15 @@
     "match": "\\(Queen\\)$"
   },
   {
+    "key": "ecosa-pure",
+    "name": "Ecosa Pure",
+    "review": "",
+    "url": "https://www.ecosa.com.au/ecosa-pure-mattress",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\(Queen / Medium.Plush Edition\\)"
+  },
+  {
     "key": "origin",
     "name": "Origin Hybrid",
     "review": "origin-mattress-review",
@@ -188,6 +216,24 @@
     "size": "Queen",
     "reader": "wcstore",
     "variant": 110967
+  },
+  {
+    "key": "origin-hybrid-plus",
+    "name": "Origin Hybrid Plus",
+    "review": "",
+    "url": "https://originmattress.com.au/product/origin-hybrid-plus-mattress/",
+    "size": "Queen",
+    "reader": "wcstore",
+    "variant": 88986
+  },
+  {
+    "key": "origin-hybrid-pro",
+    "name": "Origin Hybrid Pro",
+    "review": "",
+    "url": "https://originmattress.com.au/product/origin-hybrid-pro-mattress/",
+    "size": "Queen",
+    "reader": "wcstore",
+    "variant": 109870
   },
   {
     "key": "onebed",
