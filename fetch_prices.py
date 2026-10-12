@@ -13,6 +13,11 @@ Two readings per product:
 
 `sale` is written only when the shelf price is lower than the list price.
 
+Member prices (2026-10-12). Sleep Republic and Ecosa now show their 20% off as
+a "Member Price" that anyone gets by giving an email address. When a member
+price is below every other price on the page, it becomes `sale` and the entry
+carries "member": true, so the site can say "member price, free sign-up".
+
 Stores that are not on Shopify (Emma, Ecosa, Origin, Sleeping Duck, Ergoflex,
 added 2026-10-05) carry a "reader" in products.json instead of a variant id.
 Their Queen price comes straight from data the page itself ships — JSON-LD,
@@ -88,9 +93,10 @@ def page_price(p):
     itself carries, so no browser is needed. Each reader names the one place in
     that store's HTML where the Queen price lives. sale is None when no discount
     shows. "no_was": true records the selling price only, and never the store's
-    own "was" figure (see Emma in products.json)."""
+    own "was" figure (see Emma in products.json). The third value is True when
+    sale is a member price (schema.org validForMemberTier, e.g. Ecosa)."""
     reader = p["reader"]
-    rrp = sale = None
+    rrp = sale = member = None
     # wcstore reads JSON, not the page: WooCommerce's public Store API for one
     # variation. Origin's product page came back from GitHub's US runner without
     # its variation list on 2026-10-06; the API answers the same either way.
@@ -115,6 +121,9 @@ def page_price(p):
                 for s in spec if isinstance(spec, list) else [spec]:
                     if "Strikethrough" in str(s.get("priceType", "")):
                         was = float(s["price"])
+                    elif s.get("validForMemberTier") and s.get("price") is not None:
+                        mp = float(s["price"])
+                        member = mp if member is None else min(member, mp)
                 rrp, sale = (was, price) if was and was > price else (price, None)
                 break
 
@@ -146,11 +155,14 @@ def page_price(p):
 
     if rrp is None:
         raise ValueError(f"{reader}: no Queen price found")
+    is_member = False
+    if member and rrp * 0.5 <= member < (sale or rrp):
+        sale, is_member = member, True
     if p.get("no_was"):
-        rrp, sale = (sale or rrp), None
+        rrp, sale, is_member = (sale or rrp), None, False
     if not 200 <= (sale or rrp) <= 10000:
         raise ValueError(f"{reader}: implausible price {sale or rrp}")
-    return rrp, sale
+    return rrp, sale, is_member
 
 
 def main():
@@ -183,7 +195,7 @@ def main():
         if p.get("reader"):
             # Not on Shopify: one reading straight from the page's own data.
             try:
-                rrp, sale = page_price(p)
+                rrp, sale, is_member = page_price(p)
             except Exception as e:  # noqa: BLE001
                 failures.append(f"{key}: page data — {e}")
                 if key in previous:
@@ -195,6 +207,8 @@ def main():
                 "sale": round(sale) if sale else None,
                 "method": "page", "read": today.isoformat(),
             }
+            if is_member:
+                brands[key]["member"] = True
             entry = brands[key]
             shown = f"${entry['sale']:,} (list ${entry['rrp']:,})" if entry["sale"] else f"${entry['rrp']:,}"
             print(f"  {key:28} {shown:26} page")
@@ -207,13 +221,13 @@ def main():
                 brands[key] = previous[key]
             continue
 
-        shelf, method = None, "server"
+        shelf, member, method = None, None, "server"
         if page:
             try:
                 page.goto(f"{p['url']}?variant={p['variant']}", wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(4000)   # the stores' discount scripts run after load
                 result = page.evaluate(extract, rrp)
-                if not result.get("price") or result["price"] >= rrp:
+                if (not result.get("price") or result["price"] >= rrp) and not result.get("member"):
                     # No discount yet. The discount apps sometimes finish late,
                     # and a missed discount would publish the list price, so
                     # look once more before believing it.
@@ -225,6 +239,7 @@ def main():
                     failures.append(f"{key}: served market {country}, not AU")
                 else:
                     shelf = result["price"]
+                    member = result.get("member")
                     method = "browser" if shelf else "server"
             except Exception as e:  # noqa: BLE001
                 failures.append(f"{key}: page — {e}")
@@ -250,12 +265,20 @@ def main():
             )
             if fresh:
                 entry.update(sale=old.get("sale"), method="carried", read=old["read"])
+                if old.get("member"):
+                    entry["member"] = True
             elif server_price < rrp:
                 entry["sale"] = round(server_price)
 
+        # A member price anyone can get with an email address, below everything
+        # else on the page, is the price a reader can actually pay.
+        if member and rrp * 0.5 <= member < (entry["sale"] or rrp):
+            entry["sale"] = round(member)
+            entry["member"] = True
+
         brands[key] = entry
         shown = f"${entry['sale']:,} (list ${entry['rrp']:,})" if entry["sale"] else f"${entry['rrp']:,}"
-        print(f"  {key:28} {shown:26} {entry['method']}")
+        print(f"  {key:28} {shown:26} {entry['method']}{' member' if entry.get('member') else ''}")
 
     if browser:
         browser.close()
@@ -264,7 +287,9 @@ def main():
     OUT.write_text(json.dumps({
         "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. "
                    "`sale` is the price a shopper saw on the rendered product page, "
-                   "present only when it was below the list price `rrp`.",
+                   "present only when it was below the list price `rrp`. "
+                   "`member`: true means `sale` is a member price, open to anyone "
+                   "who signs up with an email address.",
         "_checked": today.isoformat(),
         "_generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "brands": brands,
@@ -278,9 +303,11 @@ def main():
     for key, entry in brands.items():
         if entry.get("method") == "carried":
             continue
-        series.setdefault(key, {})[entry["read"]] = [entry["rrp"], entry["sale"]]
+        point = [entry["rrp"], entry["sale"]] + (["member"] if entry.get("member") else [])
+        series.setdefault(key, {})[entry["read"]] = point
     history["_readme"] = ("Every reading fetch_prices.py has made, by product and date: "
-                          "[rrp, sale]. sale is null when no discount was showing.")
+                          "[rrp, sale], plus \"member\" when sale was a member price "
+                          "(from 2026-10-12). sale is null when no discount was showing.")
     history["brands"] = {k: dict(sorted(v.items())) for k, v in sorted(series.items())}
     HISTORY.write_text(json.dumps(history, indent=1) + "\n")
 

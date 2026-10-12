@@ -14,10 +14,20 @@ loads, so their product data alone shows the list price, not the price you pay.
   `no_was: true` records the selling price only and never the store's own
   "was" price.
 - `extract.js` — how the price is read off the page.
+
+## Member prices
+
+From 2026-10-12 Sleep Republic and Ecosa show their discount as a "Member
+Price" that anyone gets by giving an email address. When a member price is the
+lowest price on the page it is written as `sale`, with `"member": true`, and the
+site labels it "member price, free sign-up". Sleep Republic's is read from the
+"Member Price" box on the rendered page (`extract.js`), Ecosa's from the
+`validForMemberTier` price in its JSON-LD. The 2026-10-11 readings of both
+missed it and show the list price.
 - `fetch_prices.py` — the run. `--no-browser` for a quick local check.
 - `.github/workflows/prices.yml` — the schedule. **Actions → Check prices → Run
   workflow** runs it now.
 
 ## history.json
 
-Every reading the bot has made, per product and date, as `[rrp, sale]` (`sale` is `null` when no discount was showing). A later run on the same day replaces the earlier one. Seeded from the commit history of `prices.json` back to 2026-09-23.
+Every reading the bot has made, per product and date, as `[rrp, sale]` (`sale` is `null` when no discount was showing), with a third value `"member"` when `sale` was a member price. A later run on the same day replaces the earlier one. Seeded from the commit history of `prices.json` back to 2026-09-23.
