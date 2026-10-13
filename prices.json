@@ -1,7 +1,7 @@
 {
   "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. `sale` is the price a shopper saw on the rendered product page, present only when it was below the list price `rrp`. `member`: true means `sale` is a member price, open to anyone who signs up with an email address.",
   "_checked": "2026-10-13",
-  "_generated_at": "2026-10-13T01:13:57Z",
+  "_generated_at": "2026-10-13T19:21:50Z",
   "brands": {
     "sleep-republic": {
       "name": "Sleep Republic",
@@ -267,7 +267,7 @@
       "rrp": 963,
       "sale": 712,
       "method": "page",
-      "read": "2026-10-12"
+      "read": "2026-10-13"
     },
     "origin-hybrid-plus": {
       "name": "Origin Hybrid Plus",
@@ -277,7 +277,7 @@
       "rrp": 1510,
       "sale": 855,
       "method": "page",
-      "read": "2026-10-12"
+      "read": "2026-10-13"
     },
     "origin-hybrid-pro": {
       "name": "Origin Hybrid Pro",
@@ -287,7 +287,7 @@
       "rrp": 2416,
       "sale": 1223,
       "method": "page",
-      "read": "2026-10-12"
+      "read": "2026-10-13"
     },
     "onebed": {
       "name": "OneBed Original",
@@ -439,6 +439,76 @@
       "source": "https://www.beddingco.com.au/products/100-mulberry-silk-sheet-set-22-momme-white",
       "rrp": 1669,
       "sale": 1252,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "pl-topper": {
+      "name": "Peace Lily Mattress Topper (Luxury Plush)",
+      "size": "Queen",
+      "review": "",
+      "source": "https://peacelily.com.au/products/mattress-topper",
+      "rrp": 569,
+      "sale": null,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "pl-topper-firm": {
+      "name": "Peace Lily Mattress Topper (Firm)",
+      "size": "Queen",
+      "review": "",
+      "source": "https://peacelily.com.au/products/mattress-topper",
+      "rrp": 639,
+      "sale": null,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "bc-latex-topper": {
+      "name": "Bedding Co Organic Latex Topper",
+      "size": "Queen",
+      "review": "",
+      "source": "https://www.beddingco.com.au/products/worlds-first-carbon-neutral-100-certified-organic-latex-mattress-underlay-topper",
+      "rrp": 755,
+      "sale": 528,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "bc-wool-topper": {
+      "name": "Bedding Co New Zealand Wool Topper",
+      "size": "Queen",
+      "review": "",
+      "source": "https://www.beddingco.com.au/products/100-new-zealand-wool-topper",
+      "rrp": 365,
+      "sale": 274,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "bc-memory-topper": {
+      "name": "Bedding Co Cooling Air Memory Foam Topper",
+      "size": "Queen",
+      "review": "",
+      "source": "https://www.beddingco.com.au/products/cooling-air-memory-foam-mattress-topper-underlay",
+      "rrp": 499,
+      "sale": 374,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "bc-down-topper": {
+      "name": "Bedding Co Hungarian Goose Down & Feather Topper",
+      "size": "Queen",
+      "review": "",
+      "source": "https://www.beddingco.com.au/products/hungarian-goose-down-feather-mattress-topper-underlay",
+      "rrp": 589,
+      "sale": 383,
+      "method": "browser",
+      "read": "2026-10-13"
+    },
+    "bc-alpaca-topper": {
+      "name": "Bedding Co Organic Alpaca Topper",
+      "size": "Queen",
+      "review": "",
+      "source": "https://www.beddingco.com.au/products/100-organic-alpaca-topper-underlay",
+      "rrp": 659,
+      "sale": 461,
       "method": "browser",
       "read": "2026-10-13"
     }

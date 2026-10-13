@@ -1,6 +1,12 @@
 {
  "_readme": "Every reading fetch_prices.py has made, by product and date: [rrp, sale], plus \"member\" when sale was a member price (from 2026-10-12). sale is null when no discount was showing.",
  "brands": {
+  "bc-alpaca-topper": {
+   "2026-10-13": [
+    659,
+    461
+   ]
+  },
   "bc-bamboo-sheets": {
    "2026-09-28": [
     295,
@@ -61,6 +67,12 @@
    "2026-10-13": [
     295,
     221
+   ]
+  },
+  "bc-down-topper": {
+   "2026-10-13": [
+    589,
+    383
    ]
   },
   "bc-egyptian-sheets": {
@@ -125,6 +137,12 @@
     322
    ]
   },
+  "bc-latex-topper": {
+   "2026-10-13": [
+    755,
+    528
+   ]
+  },
   "bc-linen-sheets": {
    "2026-09-28": [
     555,
@@ -185,6 +203,12 @@
    "2026-10-13": [
     555,
     416
+   ]
+  },
+  "bc-memory-topper": {
+   "2026-10-13": [
+    499,
+    374
    ]
   },
   "bc-silk-sheets": {
@@ -371,6 +395,12 @@
    "2026-10-13": [
     579,
     405
+   ]
+  },
+  "bc-wool-topper": {
+   "2026-10-13": [
+    365,
+    274
    ]
   },
   "ecosa": {
@@ -911,16 +941,28 @@
    "2026-10-12": [
     963,
     712
+   ],
+   "2026-10-13": [
+    963,
+    712
    ]
   },
   "origin-hybrid-plus": {
    "2026-10-12": [
     1510,
     855
+   ],
+   "2026-10-13": [
+    1510,
+    855
    ]
   },
   "origin-hybrid-pro": {
    "2026-10-12": [
+    2416,
+    1223
+   ],
+   "2026-10-13": [
     2416,
     1223
    ]
@@ -1202,6 +1244,18 @@
    ],
    "2026-10-13": [
     329,
+    null
+   ]
+  },
+  "pl-topper": {
+   "2026-10-13": [
+    569,
+    null
+   ]
+  },
+  "pl-topper-firm": {
+   "2026-10-13": [
+    639,
     null
    ]
   },
