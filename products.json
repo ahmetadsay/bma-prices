@@ -356,5 +356,61 @@
     "url": "https://www.beddingco.com.au/products/100-mulberry-silk-sheet-set-22-momme-white",
     "variant": 50824043987246,
     "size": "Queen"
+  },
+  {
+    "key": "pl-topper",
+    "name": "Peace Lily Mattress Topper (Luxury Plush)",
+    "review": "",
+    "url": "https://peacelily.com.au/products/mattress-topper",
+    "variant": 17597070114886,
+    "size": "Queen"
+  },
+  {
+    "key": "pl-topper-firm",
+    "name": "Peace Lily Mattress Topper (Firm)",
+    "review": "",
+    "url": "https://peacelily.com.au/products/mattress-topper",
+    "variant": 43987161809076,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-latex-topper",
+    "name": "Bedding Co Organic Latex Topper",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/worlds-first-carbon-neutral-100-certified-organic-latex-mattress-underlay-topper",
+    "variant": 47733046378798,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-wool-topper",
+    "name": "Bedding Co New Zealand Wool Topper",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/100-new-zealand-wool-topper",
+    "variant": 48022194979118,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-memory-topper",
+    "name": "Bedding Co Cooling Air Memory Foam Topper",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/cooling-air-memory-foam-mattress-topper-underlay",
+    "variant": 49974905798958,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-down-topper",
+    "name": "Bedding Co Hungarian Goose Down & Feather Topper",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/hungarian-goose-down-feather-mattress-topper-underlay",
+    "variant": 47733052965166,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-alpaca-topper",
+    "name": "Bedding Co Organic Alpaca Topper",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/100-organic-alpaca-topper-underlay",
+    "variant": 47733044478254,
+    "size": "Queen"
   }
 ]
