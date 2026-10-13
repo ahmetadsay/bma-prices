@@ -412,5 +412,69 @@
     "url": "https://www.beddingco.com.au/products/100-organic-alpaca-topper-underlay",
     "variant": 47733044478254,
     "size": "Queen"
+  },
+  {
+    "key": "sr-kids",
+    "name": "Sleep Republic Kids Mattress",
+    "review": "",
+    "url": "https://www.sleeprepublic.com.au/products/kids-mattress",
+    "variant": 49653713928487,
+    "size": "Single"
+  },
+  {
+    "key": "luxara-kids",
+    "name": "Luxara Kids Flip Mattress",
+    "review": "",
+    "url": "https://luxara.com.au/products/luxara-kids-mattress",
+    "variant": 44071535673598,
+    "size": "Single"
+  },
+  {
+    "key": "pl-cot",
+    "name": "Peace Lily Cot Mattress",
+    "review": "",
+    "url": "https://peacelily.com.au/products/cot-mattress",
+    "variant": 44141249134772,
+    "size": "Cot"
+  },
+  {
+    "key": "ek-mattress",
+    "name": "Eco Kids Mattress",
+    "review": "",
+    "url": "https://www.ecokids.net.au/products/eco-kids-mattress",
+    "variant": 46497059569903,
+    "size": "Single"
+  },
+  {
+    "key": "ek-deluxe",
+    "name": "Eco Kids Deluxe Mattress",
+    "review": "",
+    "url": "https://www.ecokids.net.au/products/eco-kids-pillow-top-mattress",
+    "variant": 46497064419567,
+    "size": "Single"
+  },
+  {
+    "key": "ek-nature-luxe",
+    "name": "Eco Kids Nature Luxe Mattress",
+    "review": "",
+    "url": "https://www.ecokids.net.au/products/eco-kids-nature-luxe-mattress",
+    "variant": 46944010666223,
+    "size": "Single"
+  },
+  {
+    "key": "ek-bunk",
+    "name": "Eco Kids Bunk Mattress",
+    "review": "",
+    "url": "https://www.ecokids.net.au/products/eco-kids-bunk-mattress",
+    "variant": 46497064354031,
+    "size": "Single"
+  },
+  {
+    "key": "ek-cot",
+    "name": "Eco Kids Latex Luxe Cot Mattress",
+    "review": "",
+    "url": "https://www.ecokids.net.au/products/eco-kids-latex-luxe-cot-mattress",
+    "variant": 47018928767215,
+    "size": "Cot"
   }
 ]
