@@ -1,7 +1,7 @@
 {
   "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. `sale` is the price a shopper saw on the rendered product page, present only when it was below the list price `rrp`. `member`: true means `sale` is a member price, open to anyone who signs up with an email address.",
-  "_checked": "2026-10-18",
-  "_generated_at": "2026-10-18T21:25:52Z",
+  "_checked": "2026-10-19",
+  "_generated_at": "2026-10-19T22:57:46Z",
   "brands": {
     "sleep-republic": {
       "name": "Sleep Republic",
@@ -11,7 +11,7 @@
       "rrp": 1660,
       "sale": 1328,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "sleep-republic-es": {
@@ -22,7 +22,7 @@
       "rrp": 1260,
       "sale": 1008,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "sleep-republic-luxe": {
@@ -33,7 +33,7 @@
       "rrp": 2360,
       "sale": 1888,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "sleep-firm": {
@@ -44,7 +44,7 @@
       "rrp": 1560,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sleep-firm-ultra": {
       "name": "Sleep Firm Ultra",
@@ -54,7 +54,7 @@
       "rrp": 2060,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sleep-firm-luxe": {
       "name": "Sleep Firm Luxe",
@@ -64,7 +64,7 @@
       "rrp": 2660,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla": {
       "name": "Yinahla Premier Luxe",
@@ -74,7 +74,7 @@
       "rrp": 6960,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla-premier-firm": {
       "name": "Yinahla Premier Firm",
@@ -84,7 +84,7 @@
       "rrp": 6460,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla-classic-comfort": {
       "name": "Yinahla Classic Comfort",
@@ -94,7 +94,7 @@
       "rrp": 4360,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla-visco-flex": {
       "name": "Yinahla Visco Flex",
@@ -104,7 +104,7 @@
       "rrp": 4660,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla-natural-latex": {
       "name": "Yinahla Natural Latex",
@@ -114,7 +114,7 @@
       "rrp": 4860,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla-copper-gel": {
       "name": "Yinahla Copper Gel",
@@ -124,7 +124,7 @@
       "rrp": 5360,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "yinahla-posture-cloud-gel": {
       "name": "Yinahla Posture Cloud Gel",
@@ -134,7 +134,7 @@
       "rrp": 5860,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "luxara": {
       "name": "Luxara Platinum",
@@ -144,7 +144,7 @@
       "rrp": 2990,
       "sale": 2490,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "luxara-classic": {
       "name": "Luxara Classic",
@@ -154,7 +154,7 @@
       "rrp": 2490,
       "sale": 1890,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "peace-lily": {
       "name": "Peace Lily Hybrid",
@@ -164,7 +164,7 @@
       "rrp": 1199,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "peace-lily-latex": {
       "name": "Peace Lily Latex",
@@ -174,7 +174,7 @@
       "rrp": 1699,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "koala": {
       "name": "Koala Mattress",
@@ -184,7 +184,7 @@
       "rrp": 1249,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "koala-plus": {
       "name": "Koala Plus",
@@ -194,7 +194,7 @@
       "rrp": 1650,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "koala-luxe": {
       "name": "Koala Luxe",
@@ -204,17 +204,17 @@
       "rrp": 2390,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "emma": {
       "name": "Emma Comfort",
       "size": "Queen",
       "review": "emma-mattress-review-2026-australias-best-cooling-mattress",
       "source": "https://www.emma-sleep.com.au/emma-comfort-mattress/",
-      "rrp": 799,
+      "rrp": 1459,
       "sale": null,
       "method": "page",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "emma-luxe": {
       "name": "Emma Luxe",
@@ -224,7 +224,7 @@
       "rrp": 1079,
       "sale": null,
       "method": "page",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ecosa": {
       "name": "Ecosa Mattress",
@@ -234,7 +234,7 @@
       "rrp": 1240,
       "sale": 992,
       "method": "page",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "ecosa-truefirm": {
@@ -245,7 +245,7 @@
       "rrp": 1170,
       "sale": 936,
       "method": "page",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "ecosa-pure": {
@@ -256,7 +256,7 @@
       "rrp": 1740,
       "sale": 1392,
       "method": "page",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "origin": {
@@ -265,9 +265,9 @@
       "review": "origin-mattress-review",
       "source": "https://originmattress.com.au/product/origin-hybrid-mattress/",
       "rrp": 963,
-      "sale": 712,
+      "sale": 737,
       "method": "page",
-      "read": "2026-10-17"
+      "read": "2026-10-19"
     },
     "origin-hybrid-plus": {
       "name": "Origin Hybrid Plus",
@@ -275,9 +275,9 @@
       "review": "",
       "source": "https://originmattress.com.au/product/origin-hybrid-plus-mattress/",
       "rrp": 1510,
-      "sale": 855,
+      "sale": 919,
       "method": "page",
-      "read": "2026-10-17"
+      "read": "2026-10-19"
     },
     "origin-hybrid-pro": {
       "name": "Origin Hybrid Pro",
@@ -285,9 +285,9 @@
       "review": "",
       "source": "https://originmattress.com.au/product/origin-hybrid-pro-mattress/",
       "rrp": 2416,
-      "sale": 1223,
+      "sale": 1320,
       "method": "page",
-      "read": "2026-10-17"
+      "read": "2026-10-19"
     },
     "onebed": {
       "name": "OneBed Original",
@@ -297,7 +297,7 @@
       "rrp": 1564,
       "sale": 939,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sleeping-duck": {
       "name": "Sleeping Duck",
@@ -307,7 +307,7 @@
       "rrp": 1649,
       "sale": null,
       "method": "page",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ergoflex": {
       "name": "Ergoflex Memory Foam",
@@ -317,7 +317,7 @@
       "rrp": 1800,
       "sale": 1350,
       "method": "page",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sr-deluxe-frame": {
       "name": "Sleep Republic Deluxe Bed Frame & Bedhead",
@@ -327,7 +327,7 @@
       "rrp": 1720,
       "sale": 1376,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "sf-deluxe-frame": {
@@ -338,7 +338,7 @@
       "rrp": 1648,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sr-deluxe-base": {
       "name": "Sleep Republic Deluxe Bed Base",
@@ -348,7 +348,7 @@
       "rrp": 660,
       "sale": 528,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "bc-timber-frame": {
@@ -357,9 +357,9 @@
       "review": "best-bed-base-australia",
       "source": "https://www.beddingco.com.au/products/timber-bed-frame",
       "rrp": 1739,
-      "sale": 1043,
+      "sale": 1304,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-velvet-base": {
       "name": "Bedding Co Velvet Luxe Bed Base",
@@ -367,9 +367,9 @@
       "review": "best-bed-base-australia",
       "source": "https://www.beddingco.com.au/products/velvet-luxe-bed-base-charcoal",
       "rrp": 579,
-      "sale": 347,
+      "sale": 405,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "pl-adjustable": {
       "name": "Peace Lily Adjustable Bed",
@@ -379,7 +379,7 @@
       "rrp": 1499,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sr-bamboo-sheets": {
       "name": "Sleep Republic Bamboo Bed Sheets",
@@ -389,7 +389,7 @@
       "rrp": 260,
       "sale": 208,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "bc-bamboo-sheets": {
@@ -398,9 +398,9 @@
       "review": "best-bed-sheets-australia",
       "source": "https://www.beddingco.com.au/products/organic-bamboo-sheet-set-350-thread-count-white",
       "rrp": 295,
-      "sale": 177,
+      "sale": 221,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-egyptian-sheets": {
       "name": "Bedding Co 1200TC Egyptian Cotton Sheet Set",
@@ -408,9 +408,9 @@
       "review": "best-bed-sheets-australia",
       "source": "https://www.beddingco.com.au/products/1200-thread-count-egyptian-cotton-sheet-set-white",
       "rrp": 429,
-      "sale": 257,
+      "sale": 322,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "pl-sheets": {
       "name": "Peace Lily Organic Egyptian Cotton Sheet Set",
@@ -420,7 +420,7 @@
       "rrp": 329,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-linen-sheets": {
       "name": "Bedding Co French Flax Linen Sheet Set",
@@ -428,9 +428,9 @@
       "review": "best-bed-sheets-australia",
       "source": "https://www.beddingco.com.au/products/100-french-flax-linen-sheet-set-white",
       "rrp": 555,
-      "sale": 333,
+      "sale": 416,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-silk-sheets": {
       "name": "Bedding Co Mulberry Silk Sheet Set 22 Momme",
@@ -438,9 +438,9 @@
       "review": "best-bed-sheets-australia",
       "source": "https://www.beddingco.com.au/products/100-mulberry-silk-sheet-set-22-momme-white",
       "rrp": 1669,
-      "sale": 1001,
+      "sale": 1252,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "pl-topper": {
       "name": "Peace Lily Mattress Topper (Luxury Plush)",
@@ -450,7 +450,7 @@
       "rrp": 569,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "pl-topper-firm": {
       "name": "Peace Lily Mattress Topper (Firm)",
@@ -460,7 +460,7 @@
       "rrp": 639,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-latex-topper": {
       "name": "Bedding Co Organic Latex Topper",
@@ -468,9 +468,9 @@
       "review": "",
       "source": "https://www.beddingco.com.au/products/worlds-first-carbon-neutral-100-certified-organic-latex-mattress-underlay-topper",
       "rrp": 755,
-      "sale": 453,
+      "sale": 528,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-wool-topper": {
       "name": "Bedding Co New Zealand Wool Topper",
@@ -478,9 +478,9 @@
       "review": "",
       "source": "https://www.beddingco.com.au/products/100-new-zealand-wool-topper",
       "rrp": 365,
-      "sale": 219,
+      "sale": 274,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-memory-topper": {
       "name": "Bedding Co Cooling Air Memory Foam Topper",
@@ -488,9 +488,9 @@
       "review": "",
       "source": "https://www.beddingco.com.au/products/cooling-air-memory-foam-mattress-topper-underlay",
       "rrp": 499,
-      "sale": 299,
+      "sale": 374,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-down-topper": {
       "name": "Bedding Co Hungarian Goose Down & Feather Topper",
@@ -498,9 +498,9 @@
       "review": "",
       "source": "https://www.beddingco.com.au/products/hungarian-goose-down-feather-mattress-topper-underlay",
       "rrp": 589,
-      "sale": 353,
+      "sale": 383,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "bc-alpaca-topper": {
       "name": "Bedding Co Organic Alpaca Topper",
@@ -508,9 +508,9 @@
       "review": "",
       "source": "https://www.beddingco.com.au/products/100-organic-alpaca-topper-underlay",
       "rrp": 659,
-      "sale": 395,
+      "sale": 461,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "sr-kids": {
       "name": "Sleep Republic Kids Mattress",
@@ -520,7 +520,7 @@
       "rrp": 820,
       "sale": 656,
       "method": "browser",
-      "read": "2026-10-18",
+      "read": "2026-10-19",
       "member": true
     },
     "luxara-kids": {
@@ -531,7 +531,7 @@
       "rrp": 1390,
       "sale": 890,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "pl-cot": {
       "name": "Peace Lily Cot Mattress",
@@ -541,7 +541,7 @@
       "rrp": 699,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ek-mattress": {
       "name": "Eco Kids Mattress",
@@ -551,7 +551,7 @@
       "rrp": 840,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ek-deluxe": {
       "name": "Eco Kids Deluxe Mattress",
@@ -561,7 +561,7 @@
       "rrp": 1080,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ek-nature-luxe": {
       "name": "Eco Kids Nature Luxe Mattress",
@@ -571,7 +571,7 @@
       "rrp": 1580,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ek-bunk": {
       "name": "Eco Kids Bunk Mattress",
@@ -581,7 +581,7 @@
       "rrp": 740,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     },
     "ek-cot": {
       "name": "Eco Kids Latex Luxe Cot Mattress",
@@ -591,7 +591,7 @@
       "rrp": 780,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-18"
+      "read": "2026-10-19"
     }
   }
 }
