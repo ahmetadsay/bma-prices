@@ -160,7 +160,8 @@ def page_price(p):
         sale, is_member = member, True
     if p.get("no_was"):
         rrp, sale, is_member = (sale or rrp), None, False
-    if not 200 <= (sale or rrp) <= 10000:
+    lo = p.get("min", 200)
+    if not lo <= (sale or rrp) <= 10000:
         raise ValueError(f"{reader}: implausible price {sale or rrp}")
     return rrp, sale, is_member
 

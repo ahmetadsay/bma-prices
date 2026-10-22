@@ -476,5 +476,137 @@
     "url": "https://www.ecokids.net.au/products/eco-kids-latex-luxe-cot-mattress",
     "variant": 47018928767215,
     "size": "Cot"
+  },
+  {
+    "key": "sr-protector",
+    "name": "Sleep Republic Tencel Mattress Protector",
+    "review": "",
+    "url": "https://www.sleeprepublic.com.au/products/mattress-protector",
+    "variant": 50096898801959,
+    "size": "Queen"
+  },
+  {
+    "key": "lx-protector",
+    "name": "Luxara Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://luxara.com.au/products/waterproof-mattress-protector",
+    "variant": 43440555327742,
+    "size": "Queen"
+  },
+  {
+    "key": "pl-protector",
+    "name": "Peace Lily Mattress Protector",
+    "review": "",
+    "url": "https://peacelily.com.au/products/mattress-protector",
+    "variant": 37571748135092,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-bamboo-protector",
+    "name": "Bedding Co Bamboo Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/100-bamboo-waterproof-mattress-protector",
+    "variant": 47733085700398,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-cotton-protector",
+    "name": "Bedding Co Cotton Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://www.beddingco.com.au/products/100-cotton-waterproof-mattress-protector",
+    "variant": 47733085503790,
+    "size": "Queen"
+  },
+  {
+    "key": "koala-protector",
+    "name": "Koala Great Barrier Mattress Protector",
+    "review": "",
+    "url": "https://au.koala.com/products/great-barrier-mattress-protector",
+    "variant": 42883786899592,
+    "size": "Queen"
+  },
+  {
+    "key": "koala-protector-deep",
+    "name": "Koala Deep Fit Great Barrier Mattress Protector",
+    "review": "",
+    "url": "https://au.koala.com/products/deep-fit-great-barrier-mattress-protector",
+    "variant": 42883786997896,
+    "size": "Queen"
+  },
+  {
+    "key": "onebed-protector",
+    "name": "Onebed Mattress Protector",
+    "review": "",
+    "url": "https://onebed.com.au/products/onebed-mattress-protector",
+    "variant": 43872860635245,
+    "size": "Queen",
+    "note": "Out of stock in every size on 2026-10-22. The .js has price 12600 under compare_at 18000. The page does not use this key while it is out of stock (card and table say 'Out of stock'); restore the shortcode on the card and the table row only when OneBed sells it again."
+  },
+  {
+    "key": "ecosa-protector",
+    "name": "Ecosa Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://www.ecosa.com.au/waterproof-mattress-protector",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\(Queen\\)$",
+    "min": 50,
+    "note": "JSON-LD name read 2026-10-22: 'Waterproof Mattress Protector (Queen)', SKU 2208, offer $200, member price $160 (validForMemberTier). 'min': 50 needs the page_price() floor patch in the same commit (README item 2); without it this entry raises 'implausible price 160.0' on every run. Checked locally with the patch on 2026-10-22: (200.0, 160.0, member)."
+  },
+  {
+    "key": "emma-protector",
+    "name": "Emma Mattress Protector",
+    "review": "",
+    "url": "https://www.emma-sleep.com.au/emma-mattress-protector/",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\| Queen$",
+    "no_was": true,
+    "min": 50,
+    "note": "JSON-LD names read 2026-10-22: 'The Emma Mattress Protector | Single / King Single / Double / Queen / King'. Queen offer SKU ESSES153203AAC, $369; page_price() returned (369.0, None) with this match. Selling price only, as for every Emma product."
+  },
+  {
+    "key": "origin-protector",
+    "name": "Origin Extend Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://originmattress.com.au/product/origin-extend-waterproof-mattress-protector/",
+    "variant": 107693,
+    "size": "Queen",
+    "reader": "wcstore",
+    "no_was": true,
+    "min": 50,
+    "note": "Queen variation 107693, SKU OM-BD-AU106-Q. WooCommerce regular_price ($242) is labelled on the page 'Similar Brands Avg Price', not Origin's own former price, so no_was keeps it off the site. Selling price $209 on 2026-10-22 (checked locally with the patched page_price()). 'min': 50 keeps a discount below $200 from failing the run; it needs the floor patch (README item 2)."
+  },
+  {
+    "key": "pab-miracle",
+    "name": "Protect-A-Bed The Miracle! Mattress Protector",
+    "review": "",
+    "url": "https://www.protectabed.com.au/products/miracle-mattress-protector",
+    "variant": 49072971972825,
+    "size": "Queen"
+  },
+  {
+    "key": "pab-allerzip",
+    "name": "Protect-A-Bed Allerzip Fully Encased Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://www.protectabed.com.au/products/allerzip-fully-encased-waterproof-mattress-protector",
+    "variant": 44322309243097,
+    "size": "Queen"
+  },
+  {
+    "key": "pab-arctic-chill",
+    "name": "Protect-A-Bed Arctic Chill Polartex Jacquard Fitted Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://www.protectabed.com.au/products/arctic-chill-polartex-jacquard-fitted-waterproof-mattress-protector",
+    "variant": 44322309570777,
+    "size": "Queen"
+  },
+  {
+    "key": "pab-signature",
+    "name": "Protect-A-Bed Signature Tencel Jacquard Fitted Waterproof Mattress Protector",
+    "review": "",
+    "url": "https://www.protectabed.com.au/products/signature-tencel-jacquard-fitted-waterproof-mattress-protector",
+    "variant": 44322309931225,
+    "size": "Queen"
   }
 ]
