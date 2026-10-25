@@ -31,3 +31,13 @@ missed it and show the list price.
 ## history.json
 
 Every reading the bot has made, per product and date, as `[rrp, sale]` (`sale` is `null` when no discount was showing), with a third value `"member"` when `sale` was a member price. A later run on the same day replaces the earlier one. Seeded from the commit history of `prices.json` back to 2026-09-23.
+
+## Price alerts
+
+`alerts.py` runs after each price read. When a tracked mattress reads below
+every earlier reading by at least $20 or 2% (whichever is larger), with at
+least seven earlier readings, it opens a GitHub issue labelled `price-alert`.
+The issue holds a ready-to-paste email for the brand's MailerLite group and
+"Any brand". One alert per brand per day, and no repeat within seven days
+unless the price falls again by the same margin (`alerts.json` remembers).
+`python alerts.py --dry-run` prints what it would open.
