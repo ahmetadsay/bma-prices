@@ -41,3 +41,12 @@ The issue holds a ready-to-paste email for the brand's MailerLite group and
 "Any brand". One alert per brand per day, and no repeat within seven days
 unless the price falls again by the same margin (`alerts.json` remembers).
 `python alerts.py --dry-run` prints what it would open.
+
+## When a read fails
+
+A product that cannot be read is tried once more after 20 seconds; if that
+fails too, its last good reading is kept (up to seven days, as above). The
+readings that worked are always saved and the alerts still run. The run turns
+red only when a product has had no fresh reading for three runs in a row, or
+when more than ten fail at once, which points at the bot rather than a store.
+So a red run means something needs fixing, not that a store had a bad day.

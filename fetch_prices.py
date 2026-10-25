@@ -24,8 +24,8 @@ Their Queen price comes straight from data the page itself ships — JSON-LD,
 WooCommerce's variation list, Next.js page data or Ergoflex's basket data —
 see page_price(). No browser is needed for them; method is "page".
 
-If a page cannot be read, the last good reading is kept for up to seven days.
-After that the product falls back to its list price with no sale, because an
+If a page cannot be read, it is tried once more after a pause, and if that
+fails too the last good reading is kept for up to seven days. After that the product falls back to its list price with no sale, because an
 old sale price may have ended and the safe mistake is to quote too high, never
 too low.
 
@@ -39,6 +39,7 @@ import json
 import pathlib
 import re
 import sys
+import time
 import urllib.request
 from urllib.parse import urlparse
 
@@ -46,7 +47,15 @@ HERE = pathlib.Path(__file__).parent
 OUT = HERE / "prices.json"
 HISTORY = HERE / "history.json"
 STALE_DAYS = 7
-MAX_FAILURES = 3          # more than this and the run goes red, so someone looks
+# The run goes red (so someone looks) when a product has had no fresh reading
+# for STUCK_DAYS runs in a row, or when more than MAX_FAILURES products fail at
+# once, which points at the bot rather than at one store. A store that has a
+# bad day stays quiet: Origin's Store API answered GitHub's runner with
+# something other than JSON on 18, 23 and 25 October 2026, and on 25 October a
+# red run threw away the 73 readings that had worked.
+STUCK_DAYS = 3
+MAX_FAILURES = 10
+RETRY_PAUSE = 20          # seconds before the second attempt at a failed read
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
 
 
@@ -104,7 +113,11 @@ def page_price(p):
 
     if reader == "wcstore":
         api = "{0.scheme}://{0.netloc}/wp-json/wc/store/v1/products/{1}".format(urlparse(p["url"]), p["variant"])
-        prices = json.loads(fetch_html(api))["prices"]
+        body = fetch_html(api)
+        try:
+            prices = json.loads(body)["prices"]
+        except ValueError:
+            raise ValueError(f"Store API sent something other than JSON: {body[:150]!r}")
         unit = 10 ** int(prices.get("currency_minor_unit", 2))
         price, regular = int(prices["price"]) / unit, int(prices["regular_price"]) / unit
         rrp, sale = (regular, price) if regular > price else (price, None)
@@ -166,6 +179,16 @@ def page_price(p):
     return rrp, sale, is_member
 
 
+def twice(read, p):
+    """read(p), and once more after a pause if it fails: most failures are a
+    store having a bad minute."""
+    try:
+        return read(p)
+    except Exception:  # noqa: BLE001
+        time.sleep(RETRY_PAUSE)
+        return read(p)
+
+
 def main():
     use_browser = "--no-browser" not in sys.argv
     products = json.loads((HERE / "products.json").read_text())
@@ -190,15 +213,16 @@ def main():
         context.add_cookies(cookies)
         page = context.new_page()
 
-    brands, failures = {}, []
+    brands, failures, unread = {}, [], []
     for p in products:
         key = p["key"]
         if p.get("reader"):
             # Not on Shopify: one reading straight from the page's own data.
             try:
-                rrp, sale, is_member = page_price(p)
+                rrp, sale, is_member = twice(page_price, p)
             except Exception as e:  # noqa: BLE001
                 failures.append(f"{key}: page data — {e}")
+                unread.append(key)
                 if key in previous:
                     brands[key] = previous[key]
                 continue
@@ -215,9 +239,10 @@ def main():
             print(f"  {key:28} {shown:26} page")
             continue
         try:
-            rrp, server_price = list_price(p)
+            rrp, server_price = twice(list_price, p)
         except Exception as e:  # noqa: BLE001
             failures.append(f"{key}: list price — {e}")
+            unread.append(key)
             if key in previous:
                 brands[key] = previous[key]
             continue
@@ -315,7 +340,12 @@ def main():
     print(f"\n{len(brands)} written, {len(failures)} failed")
     for f in failures:
         print("  FAILED", f)
-    if len(failures) > MAX_FAILURES:
+    # Unread today, and its last good reading is STUCK_DAYS or more old.
+    stuck = [k for k in unread
+             if (today - dt.date.fromisoformat(brands.get(k, {}).get("read", "1970-01-01"))).days >= STUCK_DAYS]
+    for k in stuck:
+        print(f"  STUCK {k}: no fresh reading since {brands.get(k, {}).get('read', 'ever')}")
+    if stuck or len(failures) > MAX_FAILURES:
         sys.exit(1)
 
 

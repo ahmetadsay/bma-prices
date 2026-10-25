@@ -26,6 +26,10 @@ jobs:
           pip install playwright==1.47.0
           python -m playwright install --with-deps chromium
       - name: Read prices
+        id: read
+        # A failed read must not throw away the readings that worked: alerts
+        # and Save still run, and the last step turns the run red afterwards.
+        continue-on-error: true
         run: python fetch_prices.py
       - name: Price alerts
         env:
@@ -38,3 +42,9 @@ jobs:
           git add prices.json history.json alerts.json
           git commit -m "prices: $(date -u +%Y-%m-%d)" || echo "nothing changed"
           git push
+      - name: Stuck products
+        if: steps.read.outcome == 'failure'
+        run: |
+          echo "A product has had no fresh reading for 3 runs, or many failed at once."
+          echo "See the end of the Read prices step. Every reading that worked has been saved."
+          exit 1

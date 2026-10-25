@@ -132,6 +132,11 @@ def main():
     sent_path = HERE / "alerts.json"
     sent = json.loads(sent_path.read_text()) if sent_path.exists() else {}
     today = max((p.get("read") or "") for p in prices.values())
+    if not dry and today != dt.date.today().isoformat():
+        # fetch_prices.py wrote nothing today (it crashed), so there is no new
+        # reading to judge, only yesterday's again.
+        print(f"No readings dated today; newest is {today}. No alerts.")
+        return
 
     drops = find_drops(prices, history, sent, today)
     # One email per brand per day: if two models of a brand drop, keep the bigger fall.
