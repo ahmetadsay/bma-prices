@@ -38,8 +38,10 @@ Every reading the bot has made, per product and date, as `[rrp, sale]` (`sale` i
 every earlier reading by at least $20 or 2% (whichever is larger), with at
 least seven earlier readings, it opens a GitHub issue labelled `price-alert`.
 The issue holds a ready-to-paste email for the brand's MailerLite group and
-"Any brand". One alert per brand per day, and no repeat within seven days
-unless the price falls again by the same margin (`alerts.json` remembers).
+"Any brand". One issue per brand, listing every model of that brand at a
+new low (the reviewed model first), and no repeat for a product within seven
+days unless its price falls again by the same margin (`alerts.json`
+remembers, by product).
 `python alerts.py --dry-run` prints what it would open.
 
 ## When a read fails

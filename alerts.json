@@ -1,12 +1,22 @@
 {
-  "Sleep Firm": {
+  "sleep-firm": {
     "date": "2026-10-25",
-    "key": "sleep-firm-luxe",
+    "group": "Sleep Firm",
+    "price": 1170
+  },
+  "sleep-firm-luxe": {
+    "date": "2026-10-25",
+    "group": "Sleep Firm",
     "price": 1995
   },
-  "Yinahla": {
+  "sleep-firm-ultra": {
     "date": "2026-10-25",
-    "key": "yinahla",
+    "group": "Sleep Firm",
+    "price": 1545
+  },
+  "yinahla": {
+    "date": "2026-10-25",
+    "group": "Yinahla",
     "price": 5220
   }
 }

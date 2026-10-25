@@ -10,8 +10,13 @@ or not:
   MIN_READINGS earlier readings, so a new product cannot "drop" on day two;
 - today's price is below every earlier reading by at least MIN_DROP_AUD or
   MIN_DROP_PCT of that low, whichever is larger, so $1 wobbles stay quiet;
-- the brand has not had an alert in the last REPEAT_DAYS days, unless the
+- the product has not had an alert in the last REPEAT_DAYS days, unless the
   price has fallen by the same margin again since that alert.
+
+One issue per brand: every model of that brand at a new low goes into the
+same email, the reviewed model first. (On 25 October 2026 the first Sleep
+Firm alert named only the Luxe, the biggest fall in dollars, while the Sleep
+Firm we review had dropped to its lowest too.)
 
 Run with --dry-run to print the issues instead of opening them.
 """
@@ -67,7 +72,7 @@ def find_drops(prices, history, sent, today):
         low = min(price_of(r) for r in earlier.values())
         if current > low - margin(low):
             continue
-        last = sent.get(group)
+        last = sent.get(key)
         if last:
             days = (dt.date.fromisoformat(today) - dt.date.fromisoformat(last["date"])).days
             if days < REPEAT_DAYS and current > last["price"] - margin(last["price"]):
@@ -81,29 +86,43 @@ def find_drops(prices, history, sent, today):
     return drops
 
 
-def issue_for(d):
+def line_for(d):
     member = " (member price: free email sign-up at the store)" if d["member"] else ""
-    review = f"{SITE}/{d['review']}/" if d["review"] else f"{SITE}/best-mattress-deals-australia/"
-    subject = f"{d['name']} is at its lowest price we've recorded: ${d['price']:,}"
+    return (f"- {d['name']} (Queen): ${d['price']:,}{member}, the lowest of {d['readings']} "
+            f"readings since {d['first']}. Lowest before today: ${d['low']:,}. "
+            f"List price: ${d['rrp']:,}.")
+
+
+def issue_for(group, models):
+    """models: every drop of one brand, the reviewed model first."""
+    lead = models[0]
+    review = next((m["review"] for m in models if m["review"]), "")
+    review = f"{SITE}/{review}/" if review else f"{SITE}/best-mattress-deals-australia/"
+    if len(models) == 1:
+        subject = f"{lead['name']} is at its lowest price we've recorded: ${lead['price']:,}"
+        intro = "Today our price tracker read it at the lowest price we have recorded:"
+    else:
+        subject = f"{group}: {len(models)} mattresses at their lowest prices we've recorded"
+        intro = (f"Today our price tracker read {len(models)} {group} mattresses at the lowest "
+                 f"prices we have recorded:")
     email = (
         f"Subject: {subject}\n\n"
         f"Hi,\n\n"
-        f"You asked us to tell you when {d['group']} drops its price. Today our price tracker read "
-        f"the {d['name']} (Queen) at ${d['price']:,}{member}, the lowest of {d['readings']} readings "
-        f"since {d['first']}. The lowest before today was ${d['low']:,}; the brand's list price is "
-        f"${d['rrp']:,}.\n\n"
+        f"You asked us to tell you when {group} drops its price. {intro}\n\n"
+        + "\n".join(line_for(m) for m in models) + "\n\n"
         f"Prices can change quickly, so check the store's own page before you buy.\n\n"
         f"Live prices for every brand we track: {SITE}/best-mattress-deals-australia/\n"
         f"Our review: {review}\n\n"
         f"Best Mattress Australia\n"
     )
-    title = f"Price alert: {d['name']} ${d['price']:,} (lowest recorded, was ${d['low']:,})"
+    names = ", ".join(f"{m['name']} ${m['price']:,}" for m in models)
+    title = f"Price alert: {names} (lowest recorded)"
+    keys = " · ".join(f"`{m['key']}` ${m['price']:,} (önceki en düşük ${m['low']:,})" for m in models)
     body = (
         f"**Ne yapılacak:** MailerLite → Campaigns → Create campaign. Alıcılar: "
-        f"**{d['group']}** ve **Any brand** grupları. Aşağıdaki metni yapıştır, gönder, "
+        f"**{group}** ve **Any brand** grupları. Aşağıdaki metni yapıştır, gönder, "
         f"sonra bu issue'yu kapat.\n\n"
-        f"Ürün anahtarı: `{d['key']}` · bugün ${d['price']:,} · önceki en düşük ${d['low']:,} · "
-        f"liste ${d['rrp']:,}{' · üye fiyatı' if d['member'] else ''}\n\n"
+        f"Ürünler: {keys}\n\n"
         f"```text\n{email}```\n"
     )
     return title, body
@@ -139,21 +158,21 @@ def main():
         return
 
     drops = find_drops(prices, history, sent, today)
-    # One email per brand per day: if two models of a brand drop, keep the bigger fall.
-    best = {}
+    # One email per brand: every model at a new low, the one we review first.
+    brands = {}
     for d in drops:
-        if d["group"] not in best or (d["low"] - d["price"]) > (best[d["group"]]["low"] - best[d["group"]]["price"]):
-            best[d["group"]] = d
-    drops = list(best.values())
-    print(f"{len(drops)} price alert(s) for {today}")
-    for d in drops:
-        title, body = issue_for(d)
+        brands.setdefault(d["group"], []).append(d)
+    print(f"{len(brands)} price alert(s) for {today}")
+    for group, models in brands.items():
+        models.sort(key=lambda m: (not m["review"], m["price"]))
+        title, body = issue_for(group, models)
         if dry:
             print(f"\n--- {title}\n{body}")
             continue
         url = open_issue(title, body)
         print(f"  {title} -> {url}")
-        sent[d["group"]] = {"date": today, "price": d["price"], "key": d["key"]}
+        for m in models:
+            sent[m["key"]] = {"date": today, "price": m["price"], "group": group}
     if not dry:
         sent_path.write_text(json.dumps(sent, indent=2, sort_keys=True) + "\n")
 
