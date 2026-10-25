@@ -1,1 +1,12 @@
-{}
+{
+  "Sleep Firm": {
+    "date": "2026-10-25",
+    "key": "sleep-firm-luxe",
+    "price": 1995
+  },
+  "Yinahla": {
+    "date": "2026-10-25",
+    "key": "yinahla",
+    "price": 5220
+  }
+}
