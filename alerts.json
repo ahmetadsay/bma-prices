@@ -14,6 +14,21 @@
     "group": "Sleep Firm",
     "price": 1545
   },
+  "sleep-republic": {
+    "date": "2026-10-26",
+    "group": "Sleep Republic",
+    "price": 1245
+  },
+  "sleep-republic-es": {
+    "date": "2026-10-26",
+    "group": "Sleep Republic",
+    "price": 945
+  },
+  "sleep-republic-luxe": {
+    "date": "2026-10-26",
+    "group": "Sleep Republic",
+    "price": 1770
+  },
   "yinahla": {
     "date": "2026-10-25",
     "group": "Yinahla",
