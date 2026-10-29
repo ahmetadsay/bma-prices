@@ -1,4 +1,14 @@
 {
+  "ecosa-pure": {
+    "date": "2026-10-29",
+    "group": "Ecosa",
+    "price": 1218
+  },
+  "ecosa-truefirm": {
+    "date": "2026-10-29",
+    "group": "Ecosa",
+    "price": 819
+  },
   "sleep-firm": {
     "date": "2026-10-25",
     "group": "Sleep Firm",
