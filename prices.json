@@ -1,7 +1,7 @@
 {
   "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. `sale` is the price a shopper saw on the rendered product page, present only when it was below the list price `rrp`. `member`: true means `sale` is a member price, open to anyone who signs up with an email address.",
-  "_checked": "2026-10-29",
-  "_generated_at": "2026-10-29T23:15:33Z",
+  "_checked": "2026-10-30",
+  "_generated_at": "2026-10-30T22:57:48Z",
   "brands": {
     "sleep-republic": {
       "name": "Sleep Republic",
@@ -11,7 +11,7 @@
       "rrp": 1660,
       "sale": 1245,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sleep-republic-es": {
       "name": "Sleep Republic ES",
@@ -21,7 +21,7 @@
       "rrp": 1260,
       "sale": 945,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sleep-republic-luxe": {
       "name": "Sleep Republic LUXE",
@@ -31,7 +31,7 @@
       "rrp": 2360,
       "sale": 1770,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sleep-firm": {
       "name": "Sleep Firm",
@@ -41,7 +41,7 @@
       "rrp": 1560,
       "sale": 1170,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sleep-firm-ultra": {
       "name": "Sleep Firm Ultra",
@@ -51,7 +51,7 @@
       "rrp": 2060,
       "sale": 1545,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sleep-firm-luxe": {
       "name": "Sleep Firm Luxe",
@@ -61,7 +61,7 @@
       "rrp": 2660,
       "sale": 1995,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla": {
       "name": "Yinahla Premier Luxe",
@@ -71,7 +71,7 @@
       "rrp": 6960,
       "sale": 5220,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla-premier-firm": {
       "name": "Yinahla Premier Firm",
@@ -81,7 +81,7 @@
       "rrp": 6460,
       "sale": 4845,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla-classic-comfort": {
       "name": "Yinahla Classic Comfort",
@@ -91,7 +91,7 @@
       "rrp": 4360,
       "sale": 3270,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla-visco-flex": {
       "name": "Yinahla Visco Flex",
@@ -101,7 +101,7 @@
       "rrp": 4660,
       "sale": 3495,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla-natural-latex": {
       "name": "Yinahla Natural Latex",
@@ -111,7 +111,7 @@
       "rrp": 4860,
       "sale": 3645,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla-copper-gel": {
       "name": "Yinahla Copper Gel",
@@ -121,7 +121,7 @@
       "rrp": 5360,
       "sale": 4020,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "yinahla-posture-cloud-gel": {
       "name": "Yinahla Posture Cloud Gel",
@@ -131,7 +131,7 @@
       "rrp": 5860,
       "sale": 4395,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "luxara": {
       "name": "Luxara Platinum",
@@ -141,7 +141,7 @@
       "rrp": 2990,
       "sale": 2490,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "luxara-classic": {
       "name": "Luxara Classic",
@@ -151,7 +151,7 @@
       "rrp": 2490,
       "sale": 1890,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "peace-lily": {
       "name": "Peace Lily Hybrid",
@@ -161,7 +161,7 @@
       "rrp": 1199,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "peace-lily-latex": {
       "name": "Peace Lily Latex",
@@ -171,7 +171,7 @@
       "rrp": 1699,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "koala": {
       "name": "Koala Mattress",
@@ -181,7 +181,7 @@
       "rrp": 1249,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "koala-plus": {
       "name": "Koala Plus",
@@ -191,7 +191,7 @@
       "rrp": 1650,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "koala-luxe": {
       "name": "Koala Luxe",
@@ -201,7 +201,7 @@
       "rrp": 2390,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "emma": {
       "name": "Emma Comfort",
@@ -211,7 +211,7 @@
       "rrp": 1459,
       "sale": null,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "emma-luxe": {
       "name": "Emma Luxe",
@@ -221,7 +221,7 @@
       "rrp": 1079,
       "sale": null,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ecosa": {
       "name": "Ecosa Mattress",
@@ -229,9 +229,9 @@
       "review": "ecosa-mattress-review-2026-is-the-adjustable-firmness-worth-it",
       "source": "https://www.ecosa.com.au/ecosa-mattress",
       "rrp": 1240,
-      "sale": 992,
+      "sale": 868,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ecosa-truefirm": {
       "name": "Ecosa TrueFirm",
@@ -241,7 +241,7 @@
       "rrp": 1170,
       "sale": 819,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ecosa-pure": {
       "name": "Ecosa Pure",
@@ -251,7 +251,7 @@
       "rrp": 1740,
       "sale": 1218,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "origin": {
       "name": "Origin Hybrid",
@@ -261,7 +261,7 @@
       "rrp": 963,
       "sale": 712,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "origin-hybrid-plus": {
       "name": "Origin Hybrid Plus",
@@ -271,7 +271,7 @@
       "rrp": 1510,
       "sale": 855,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "origin-hybrid-pro": {
       "name": "Origin Hybrid Pro",
@@ -281,7 +281,7 @@
       "rrp": 2416,
       "sale": 1223,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "onebed": {
       "name": "OneBed Original",
@@ -291,7 +291,7 @@
       "rrp": 1564,
       "sale": 939,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sleeping-duck": {
       "name": "Sleeping Duck",
@@ -301,7 +301,7 @@
       "rrp": 1649,
       "sale": null,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ergoflex": {
       "name": "Ergoflex Memory Foam",
@@ -311,7 +311,7 @@
       "rrp": 1800,
       "sale": null,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sr-deluxe-frame": {
       "name": "Sleep Republic Deluxe Bed Frame & Bedhead",
@@ -321,7 +321,7 @@
       "rrp": 1720,
       "sale": 1290,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sf-deluxe-frame": {
       "name": "Sleep Firm Deluxe Bed Frame",
@@ -331,7 +331,7 @@
       "rrp": 1648,
       "sale": 1236,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sr-deluxe-base": {
       "name": "Sleep Republic Deluxe Bed Base",
@@ -341,7 +341,7 @@
       "rrp": 660,
       "sale": 495,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-timber-frame": {
       "name": "Bedding Co Timber Bed Frame",
@@ -351,7 +351,7 @@
       "rrp": 1739,
       "sale": 1304,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-velvet-base": {
       "name": "Bedding Co Velvet Luxe Bed Base",
@@ -361,7 +361,7 @@
       "rrp": 579,
       "sale": 376,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pl-adjustable": {
       "name": "Peace Lily Adjustable Bed",
@@ -371,7 +371,7 @@
       "rrp": 1499,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sr-bamboo-sheets": {
       "name": "Sleep Republic Bamboo Bed Sheets",
@@ -381,7 +381,7 @@
       "rrp": 260,
       "sale": 195,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-bamboo-sheets": {
       "name": "Bedding Co Organic Bamboo Sheet Set",
@@ -391,7 +391,7 @@
       "rrp": 295,
       "sale": 221,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-egyptian-sheets": {
       "name": "Bedding Co 1200TC Egyptian Cotton Sheet Set",
@@ -401,7 +401,7 @@
       "rrp": 429,
       "sale": 322,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pl-sheets": {
       "name": "Peace Lily Organic Egyptian Cotton Sheet Set",
@@ -411,7 +411,7 @@
       "rrp": 329,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-linen-sheets": {
       "name": "Bedding Co French Flax Linen Sheet Set",
@@ -421,7 +421,7 @@
       "rrp": 555,
       "sale": 416,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-silk-sheets": {
       "name": "Bedding Co Mulberry Silk Sheet Set 22 Momme",
@@ -431,7 +431,7 @@
       "rrp": 1669,
       "sale": 1252,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pl-topper": {
       "name": "Peace Lily Mattress Topper (Luxury Plush)",
@@ -441,7 +441,7 @@
       "rrp": 569,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pl-topper-firm": {
       "name": "Peace Lily Mattress Topper (Firm)",
@@ -451,7 +451,7 @@
       "rrp": 639,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-latex-topper": {
       "name": "Bedding Co Organic Latex Topper",
@@ -461,7 +461,7 @@
       "rrp": 755,
       "sale": 491,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-wool-topper": {
       "name": "Bedding Co New Zealand Wool Topper",
@@ -471,7 +471,7 @@
       "rrp": 365,
       "sale": 274,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-memory-topper": {
       "name": "Bedding Co Cooling Air Memory Foam Topper",
@@ -481,7 +481,7 @@
       "rrp": 499,
       "sale": 374,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-down-topper": {
       "name": "Bedding Co Hungarian Goose Down & Feather Topper",
@@ -491,7 +491,7 @@
       "rrp": 589,
       "sale": 353,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-alpaca-topper": {
       "name": "Bedding Co Organic Alpaca Topper",
@@ -501,7 +501,7 @@
       "rrp": 659,
       "sale": 428,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sr-kids": {
       "name": "Sleep Republic Kids Mattress",
@@ -511,7 +511,7 @@
       "rrp": 820,
       "sale": 615,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "luxara-kids": {
       "name": "Luxara Kids Flip Mattress",
@@ -521,7 +521,7 @@
       "rrp": 1390,
       "sale": 890,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pl-cot": {
       "name": "Peace Lily Cot Mattress",
@@ -531,7 +531,7 @@
       "rrp": 699,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ek-mattress": {
       "name": "Eco Kids Mattress",
@@ -541,7 +541,7 @@
       "rrp": 840,
       "sale": 740,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ek-deluxe": {
       "name": "Eco Kids Deluxe Mattress",
@@ -551,7 +551,7 @@
       "rrp": 1080,
       "sale": 980,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ek-nature-luxe": {
       "name": "Eco Kids Nature Luxe Mattress",
@@ -561,7 +561,7 @@
       "rrp": 1580,
       "sale": 1480,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ek-bunk": {
       "name": "Eco Kids Bunk Mattress",
@@ -571,7 +571,7 @@
       "rrp": 740,
       "sale": 640,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ek-cot": {
       "name": "Eco Kids Latex Luxe Cot Mattress",
@@ -581,7 +581,7 @@
       "rrp": 780,
       "sale": 680,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "sr-protector": {
       "name": "Sleep Republic Tencel Mattress Protector",
@@ -591,7 +591,7 @@
       "rrp": 229,
       "sale": 172,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "lx-protector": {
       "name": "Luxara Waterproof Mattress Protector",
@@ -601,7 +601,7 @@
       "rrp": 99,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pl-protector": {
       "name": "Peace Lily Mattress Protector",
@@ -611,7 +611,7 @@
       "rrp": 309,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-bamboo-protector": {
       "name": "Bedding Co Bamboo Waterproof Mattress Protector",
@@ -621,7 +621,7 @@
       "rrp": 119,
       "sale": 89,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "bc-cotton-protector": {
       "name": "Bedding Co Cotton Waterproof Mattress Protector",
@@ -631,7 +631,7 @@
       "rrp": 105,
       "sale": 79,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "koala-protector": {
       "name": "Koala Great Barrier Mattress Protector",
@@ -641,7 +641,7 @@
       "rrp": 185,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "koala-protector-deep": {
       "name": "Koala Deep Fit Great Barrier Mattress Protector",
@@ -651,7 +651,7 @@
       "rrp": 195,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "onebed-protector": {
       "name": "Onebed Mattress Protector",
@@ -661,7 +661,7 @@
       "rrp": 180,
       "sale": 120,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "ecosa-protector": {
       "name": "Ecosa Waterproof Mattress Protector",
@@ -669,9 +669,9 @@
       "review": "",
       "source": "https://www.ecosa.com.au/waterproof-mattress-protector",
       "rrp": 200,
-      "sale": 160,
+      "sale": 140,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "emma-protector": {
       "name": "Emma Mattress Protector",
@@ -681,7 +681,7 @@
       "rrp": 369,
       "sale": null,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "origin-protector": {
       "name": "Origin Extend Waterproof Mattress Protector",
@@ -691,7 +691,7 @@
       "rrp": 209,
       "sale": null,
       "method": "page",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pab-miracle": {
       "name": "Protect-A-Bed The Miracle! Mattress Protector",
@@ -701,7 +701,7 @@
       "rrp": 130,
       "sale": null,
       "method": "server",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pab-allerzip": {
       "name": "Protect-A-Bed Allerzip Fully Encased Waterproof Mattress Protector",
@@ -711,7 +711,7 @@
       "rrp": 220,
       "sale": null,
       "method": "server",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pab-arctic-chill": {
       "name": "Protect-A-Bed Arctic Chill Polartex Jacquard Fitted Waterproof Mattress Protector",
@@ -721,7 +721,7 @@
       "rrp": 330,
       "sale": null,
       "method": "browser",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     },
     "pab-signature": {
       "name": "Protect-A-Bed Signature Tencel Jacquard Fitted Waterproof Mattress Protector",
@@ -731,7 +731,7 @@
       "rrp": 230,
       "sale": null,
       "method": "server",
-      "read": "2026-10-29"
+      "read": "2026-10-30"
     }
   }
 }
