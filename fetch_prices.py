@@ -255,19 +255,24 @@ def main():
             try:
                 page.goto(f"{p['url']}?variant={p['variant']}", wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(4000)   # the stores' discount scripts run after load
-                result = page.evaluate(extract, {"rrp": rrp, "floor": floor})
+                result = page.evaluate(extract, {"rrp": rrp, "floor": floor, "server": server_price})
                 if (not result.get("price") or result["price"] >= rrp) and not result.get("member"):
                     # No discount yet. The discount apps sometimes finish late,
                     # and a missed discount would publish the list price, so
                     # look once more before believing it.
                     page.wait_for_timeout(8000)
-                    result = page.evaluate(extract, {"rrp": rrp, "floor": floor})
+                    result = page.evaluate(extract, {"rrp": rrp, "floor": floor, "server": server_price})
                 country = result.get("country")
                 if country and country != "AU":
                     # Read in the wrong market: that is some other country's price.
                     failures.append(f"{key}: served market {country}, not AU")
                 else:
                     shelf = result["price"]
+                    if (not shelf or shelf >= rrp) and server_price < rrp and result.get("serverShown"):
+                        # No discount read, yet the page shows the store's own
+                        # lower price, not crossed out: the first amount was a
+                        # compare-at price struck some other way (Newentor).
+                        shelf = server_price
                     member = result.get("member")
                     method = "browser" if shelf else "server"
             except Exception as e:  # noqa: BLE001

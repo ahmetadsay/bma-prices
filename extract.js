@@ -16,6 +16,10 @@
 //     to just under the store's own Shopify price when that is lower (added
 //     2026-11-04): Newentor sells its $1,400 hybrid at $699, 49.9% of list, and
 //     the half-price floor threw the real price away and kept the old one.
+//   - Report whether the store's own Shopify price is on the page, not struck
+//     (`serverShown`). Newentor prints its $1,400 compare-at price before the
+//     $699 and crosses it out without text-decoration, so the first amount read
+//     is the old price; fetch_prices.py then falls back to the store's price.
 //   - Take the first that survives. The main price renders before upsells.
 //
 // Validated by hand against all 16 products on 2026-09-24.
@@ -26,7 +30,7 @@
 // member price is read separately: the lowest in-range amount inside the
 // nearest block that carries a "Member Price" label. Returned as `member`;
 // fetch_prices.py decides what to do with it.
-({ rrp, floor }) => {
+({ rrp, floor, server }) => {
   const visible = (e) =>
     e.checkVisibility
       ? e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })
@@ -78,5 +82,7 @@
   // off and Sleep Firm full price, an Australian the exact reverse.
   const country = (window.Shopify && window.Shopify.country) || null;
 
-  return { price: live.length ? live[0].value : null, member, country, seen: seen.slice(0, 8) };
+  const serverShown = !!server && seen.some((x) => !x.struck && Math.abs(x.value - server) < 0.005);
+
+  return { price: live.length ? live[0].value : null, member, country, serverShown, seen: seen.slice(0, 8) };
 }
