@@ -29,6 +29,11 @@
     "group": "Koala",
     "price": 1238
   },
+  "origin-hybrid-pro": {
+    "date": "2026-11-03",
+    "group": "Origin",
+    "price": 1172
+  },
   "sleep-firm": {
     "date": "2026-10-25",
     "group": "Sleep Firm",
