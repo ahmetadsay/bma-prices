@@ -248,17 +248,20 @@ def main():
             continue
 
         shelf, member, method = None, None, "server"
+        # Lowest shelf price believed: half the list price, or just under the
+        # store's own price when the store itself sells for less than half.
+        floor = min(rrp * 0.5, server_price * 0.98)
         if page:
             try:
                 page.goto(f"{p['url']}?variant={p['variant']}", wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(4000)   # the stores' discount scripts run after load
-                result = page.evaluate(extract, rrp)
+                result = page.evaluate(extract, {"rrp": rrp, "floor": floor})
                 if (not result.get("price") or result["price"] >= rrp) and not result.get("member"):
                     # No discount yet. The discount apps sometimes finish late,
                     # and a missed discount would publish the list price, so
                     # look once more before believing it.
                     page.wait_for_timeout(8000)
-                    result = page.evaluate(extract, rrp)
+                    result = page.evaluate(extract, {"rrp": rrp, "floor": floor})
                 country = result.get("country")
                 if country and country != "AU":
                     # Read in the wrong market: that is some other country's price.

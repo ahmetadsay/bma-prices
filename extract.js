@@ -12,7 +12,10 @@
 //   - Skip anything hidden. Shopify themes keep both a sale and a regular
 //     price block in the DOM and hide one.
 //   - Accept only amounts between half the list price and the list price.
-//     Delivery fees, pillows and $10 add-ons fall outside it.
+//     Delivery fees, pillows and $10 add-ons fall outside it. The floor drops
+//     to just under the store's own Shopify price when that is lower (added
+//     2026-11-04): Newentor sells its $1,400 hybrid at $699, 49.9% of list, and
+//     the half-price floor threw the real price away and kept the old one.
 //   - Take the first that survives. The main price renders before upsells.
 //
 // Validated by hand against all 16 products on 2026-09-24.
@@ -23,7 +26,7 @@
 // member price is read separately: the lowest in-range amount inside the
 // nearest block that carries a "Member Price" label. Returned as `member`;
 // fetch_prices.py decides what to do with it.
-(rrp) => {
+({ rrp, floor }) => {
   const visible = (e) =>
     e.checkVisibility
       ? e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })
@@ -53,7 +56,7 @@
     }
   }
 
-  const live = seen.filter((x) => !x.struck && x.value >= rrp * 0.5 && x.value <= rrp * 1.001);
+  const live = seen.filter((x) => !x.struck && x.value >= floor && x.value <= rrp * 1.001);
 
   let member = null;
   const labels = [...box.querySelectorAll("*")].filter(
