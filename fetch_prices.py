@@ -275,6 +275,10 @@ def main():
                         shelf = server_price
                     member = result.get("member")
                     method = "browser" if shelf else "server"
+                    if not shelf and not member:
+                        # The page gave no usable amount: log what it did show,
+                        # so a changed page can be diagnosed from the run log.
+                        print(f"  {key}: no price read; form {result.get('form')}, amounts {result.get('seen')}")
             except Exception as e:  # noqa: BLE001
                 failures.append(f"{key}: page — {e}")
 

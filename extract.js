@@ -84,5 +84,5 @@
 
   const serverShown = !!server && seen.some((x) => !x.struck && Math.abs(x.value - server) < 0.005);
 
-  return { price: live.length ? live[0].value : null, member, country, serverShown, seen: seen.slice(0, 8) };
+  return { price: live.length ? live[0].value : null, member, country, serverShown, seen: seen.slice(0, 8), form: !!form };
 }
