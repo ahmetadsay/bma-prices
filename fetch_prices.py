@@ -291,9 +291,11 @@ def main():
             # No shelf reading. Prefer a recent browser reading of the same list
             # price; failing that, the store's own compare_at sale, which is a
             # real reading too — it just cannot see client-side discounts.
+            # A reading already carried once keeps its original date, so it can
+            # be carried again until that date is STALE_DAYS old.
             old = previous.get(key)
             fresh = (
-                use_browser and old and old.get("method") == "browser"
+                use_browser and old and old.get("method") in ("browser", "carried")
                 and old.get("rrp") == round(rrp)
                 and (today - dt.date.fromisoformat(old.get("read", "1970-01-01"))).days <= STALE_DAYS
             )
