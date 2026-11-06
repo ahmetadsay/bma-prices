@@ -253,9 +253,20 @@ def main():
         floor = min(rrp * 0.5, server_price * 0.98)
         if page:
             try:
-                page.goto(f"{p['url']}?variant={p['variant']}", wait_until="domcontentloaded", timeout=45000)
+                url = f"{p['url']}?variant={p['variant']}"
+                resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
                 page.wait_for_timeout(4000)   # the stores' discount scripts run after load
                 result = page.evaluate(extract, {"rrp": rrp, "floor": floor, "server": server_price})
+                if not result.get("form") and not result.get("seen"):
+                    # An empty page: no cart form, no amount at all. Sleep
+                    # Collective's stores serve one for a product opened right
+                    # after another from the same store (run log, 6 Nov 2026),
+                    # so wait and load it once more.
+                    print(f"  {key}: empty page (HTTP {resp.status if resp else '?'}), loading again in 30 s")
+                    page.wait_for_timeout(30000)
+                    resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                    page.wait_for_timeout(4000)
+                    result = page.evaluate(extract, {"rrp": rrp, "floor": floor, "server": server_price})
                 if (not result.get("price") or result["price"] >= rrp) and not result.get("member"):
                     # No discount yet. The discount apps sometimes finish late,
                     # and a missed discount would publish the list price, so
