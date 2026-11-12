@@ -19,15 +19,20 @@
     "group": "Emma",
     "price": 959
   },
+  "koala": {
+    "date": "2026-11-12",
+    "group": "Koala",
+    "price": 874
+  },
   "koala-luxe": {
     "date": "2026-11-01",
     "group": "Koala",
     "price": 1673
   },
   "koala-plus": {
-    "date": "2026-11-01",
+    "date": "2026-11-12",
     "group": "Koala",
-    "price": 1238
+    "price": 1155
   },
   "origin-hybrid-pro": {
     "date": "2026-11-10",
