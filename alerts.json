@@ -34,6 +34,11 @@
     "group": "Koala",
     "price": 1155
   },
+  "origin": {
+    "date": "2026-11-14",
+    "group": "Origin",
+    "price": 639
+  },
   "origin-hybrid-pro": {
     "date": "2026-11-10",
     "group": "Origin",
