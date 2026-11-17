@@ -14,6 +14,11 @@
     "group": "Ecosa",
     "price": 819
   },
+  "emma": {
+    "date": "2026-11-17",
+    "group": "Emma",
+    "price": 719
+  },
   "emma-luxe": {
     "date": "2026-11-03",
     "group": "Emma",
@@ -33,6 +38,11 @@
     "date": "2026-11-12",
     "group": "Koala",
     "price": 1155
+  },
+  "onebed": {
+    "date": "2026-11-17",
+    "group": "OneBed",
+    "price": 785
   },
   "origin": {
     "date": "2026-11-14",
