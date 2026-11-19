@@ -616,5 +616,79 @@
     "url": "https://newentor.com.au/products/mh2-7-zone-hybrid-mattress",
     "variant": 41991720173762,
     "size": "Queen"
+  },
+  {
+    "key": "ecosa-cooling-quilt",
+    "name": "Ecosa Cooling Quilt",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.ecosa.com.au/ecosa-cooling-quilt",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "^Cooling Quilt \\(Queen\\)$",
+    "min": 50
+  },
+  {
+    "key": "sd-duvet",
+    "name": "Sleeping Duck TENCEL Duvet (Summer 300GSM)",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.sleepingduck.com/au/duvet/",
+    "size": "Queen",
+    "reader": "nextjs",
+    "sku": "DUVET-QN-A",
+    "min": 50
+  },
+  {
+    "key": "ecosa-wool-quilt",
+    "name": "Ecosa Australian Wool Quilt (Winter 500GSM)",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.ecosa.com.au/wool-quilt",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\(Winter / Queen\\)$",
+    "min": 50
+  },
+  {
+    "key": "bc-wool-quilt",
+    "name": "Bedding Co 100% Australian Wool Quilt (All Seasons)",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.beddingco.com.au/products/australian-wool-quilt-all-seasons-or-winter-doona-bundle",
+    "variant": 51243629576494,
+    "size": "Queen"
+  },
+  {
+    "key": "bc-down-quilt",
+    "name": "Bedding Co German Made Hungarian Goose Down Quilt (All Seasons)",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.beddingco.com.au/products/german-made-hungarian-goose-down-quilt",
+    "variant": 47734276620590,
+    "size": "Queen"
+  },
+  {
+    "key": "ecosa-silk-quilt",
+    "name": "Ecosa Luxe Silk Quilt (Mid-season 550GSM)",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.ecosa.com.au/silk-quilt",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "\\(Mid.season / Queen\\)$",
+    "min": 50
+  },
+  {
+    "key": "ecosa-temprite-quilt",
+    "name": "Ecosa TempRite Quilt",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://www.ecosa.com.au/temprite-quilt",
+    "size": "Queen",
+    "reader": "jsonld",
+    "match": "^TempRite Quilt \\(Queen\\)$",
+    "min": 50
+  },
+  {
+    "key": "onebed-duvet",
+    "name": "Onebed Duvet All Season (150 + 250 GSM)",
+    "review": "best-quilts-doonas-australia",
+    "url": "https://onebed.com.au/products/onebed-quilt",
+    "variant": 43955505594477,
+    "size": "Queen"
   }
 ]
