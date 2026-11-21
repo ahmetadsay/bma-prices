@@ -128,9 +128,17 @@ def page_price(p):
             if re.search(p["match"], prod.get("name", "")):
                 offer = prod.get("offers") or {}
                 offer = offer[0] if isinstance(offer, list) else offer
-                price = float(offer["price"])
-                was = None
                 spec = offer.get("priceSpecification") or []
+                if offer.get("price") is not None:
+                    price = float(offer["price"])
+                else:
+                    # Lounge Lovers (2026-11-21) puts the price only in a plain
+                    # PriceSpecification, with no priceType and no member tier.
+                    plain = [s for s in (spec if isinstance(spec, list) else [spec])
+                             if s.get("price") is not None and not s.get("validForMemberTier")
+                             and "Strikethrough" not in str(s.get("priceType", ""))]
+                    price = float(plain[0]["price"])
+                was = None
                 for s in spec if isinstance(spec, list) else [spec]:
                     if "Strikethrough" in str(s.get("priceType", "")):
                         was = float(s["price"])

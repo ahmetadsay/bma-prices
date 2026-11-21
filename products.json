@@ -690,5 +690,84 @@
     "url": "https://onebed.com.au/products/onebed-quilt",
     "variant": 43955505594477,
     "size": "Queen"
+  },
+  {
+    "key": "sr-sofa-bed",
+    "name": "Sleep Republic Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.sleeprepublic.com.au/products/sleeprepublic-sofa-bed",
+    "variant": 50923924750631,
+    "size": "Queen (3 seater)"
+  },
+  {
+    "key": "ecosa-sydney-sofa-bed",
+    "name": "Ecosa Sydney Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.ecosa.com.au/sydney-sofa-bed",
+    "size": "3 Seater (Queen)",
+    "reader": "jsonld",
+    "match": "^Sydney Sofa Bed \\(Charcoal / 3 Seater \\(Queen\\)\\)$"
+  },
+  {
+    "key": "ecosa-nimble-sofa-bed",
+    "name": "Ecosa Nimble Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.ecosa.com.au/nimble-sofa-bed",
+    "size": "3 Seater (King)",
+    "reader": "jsonld",
+    "match": "^Nimble Sofa Bed \\(Ice Grey / 3 Seater \\(King\\)\\)$"
+  },
+  {
+    "key": "ecosa-versa-sofa-bed",
+    "name": "Ecosa Versa Modular Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.ecosa.com.au/versa-modular-sofa-bed",
+    "size": "2.5 Seater, 1 module (Queen)",
+    "reader": "jsonld",
+    "match": "^Versa Modular Sofa Bed \\(Queen / Classic Cream / 2\\.5 Seater \\(1 Module\\)\\)$"
+  },
+  {
+    "key": "ecosa-bower-sofa-bed",
+    "name": "Ecosa Bower Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.ecosa.com.au/bower-sofa-bed",
+    "size": "3.5 Seater (Double)",
+    "reader": "jsonld",
+    "match": "^Bower Sofa Bed \\(Warm Beige / 3\\.5 Seater \\(Double\\)\\)$"
+  },
+  {
+    "key": "castlery-hamilton-sofa-bed",
+    "name": "Castlery Hamilton 3 Seater Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.castlery.com/au/products/hamilton-3-seater-sofa-bed",
+    "size": "3 Seater",
+    "reader": "jsonld",
+    "match": "^Hamilton 3 Seater Sofa Bed$"
+  },
+  {
+    "key": "castlery-agnes-sofa-bed",
+    "name": "Castlery Agnes 3 Seater Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.castlery.com/au/products/agnes-3-seater-sofa-bed",
+    "size": "3 Seater",
+    "reader": "jsonld",
+    "match": "^Agnes 3 Seater Sofa Bed$"
+  },
+  {
+    "key": "ll-loft-mini-sofa-bed",
+    "name": "Lounge Lovers Loft Mini 3 Seat Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://www.loungelovers.com.au/products/loft-mini-3-seat-sofa-bed-florence-natural",
+    "size": "3 Seat",
+    "reader": "jsonld",
+    "match": "^Loft Mini 3 Seat Sofa Bed"
+  },
+  {
+    "key": "eva-slideaway-sofa-bed",
+    "name": "Eva Slideaway Sofa Bed",
+    "review": "best-sofa-beds-australia",
+    "url": "https://eva.com.au/products/slideaway-sofa-bed",
+    "variant": 41620505100333,
+    "size": "3 Seater / Double Bed"
   }
 ]
