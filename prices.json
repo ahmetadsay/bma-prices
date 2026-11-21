@@ -1,7 +1,7 @@
 {
   "_readme": "Written by fetch_prices.py every few days. Do not hand-edit. `sale` is the price a shopper saw on the rendered product page, present only when it was below the list price `rrp`. `member`: true means `sale` is a member price, open to anyone who signs up with an email address.",
   "_checked": "2026-11-21",
-  "_generated_at": "2026-11-21T00:56:11Z",
+  "_generated_at": "2026-11-21T17:04:40Z",
   "brands": {
     "sleep-republic": {
       "name": "Sleep Republic",
@@ -261,7 +261,7 @@
       "rrp": 963,
       "sale": 652,
       "method": "page",
-      "read": "2026-11-19"
+      "read": "2026-11-21"
     },
     "origin-hybrid-plus": {
       "name": "Origin Hybrid Plus",
@@ -271,7 +271,7 @@
       "rrp": 1510,
       "sale": 868,
       "method": "page",
-      "read": "2026-11-19"
+      "read": "2026-11-21"
     },
     "origin-hybrid-pro": {
       "name": "Origin Hybrid Pro",
@@ -281,7 +281,7 @@
       "rrp": 2416,
       "sale": 1160,
       "method": "page",
-      "read": "2026-11-19"
+      "read": "2026-11-21"
     },
     "onebed": {
       "name": "OneBed Original",
@@ -691,7 +691,7 @@
       "rrp": 209,
       "sale": null,
       "method": "page",
-      "read": "2026-11-19"
+      "read": "2026-11-21"
     },
     "pab-miracle": {
       "name": "Protect-A-Bed The Miracle! Mattress Protector",
@@ -820,6 +820,96 @@
       "source": "https://onebed.com.au/products/onebed-quilt",
       "rrp": 358,
       "sale": 275,
+      "method": "browser",
+      "read": "2026-11-21"
+    },
+    "sr-sofa-bed": {
+      "name": "Sleep Republic Sofa Bed",
+      "size": "Queen (3 seater)",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.sleeprepublic.com.au/products/sleeprepublic-sofa-bed",
+      "rrp": 2380,
+      "sale": 1785,
+      "method": "server",
+      "read": "2026-11-21"
+    },
+    "ecosa-sydney-sofa-bed": {
+      "name": "Ecosa Sydney Sofa Bed",
+      "size": "3 Seater (Queen)",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.ecosa.com.au/sydney-sofa-bed",
+      "rrp": 2240,
+      "sale": 1456,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "ecosa-nimble-sofa-bed": {
+      "name": "Ecosa Nimble Sofa Bed",
+      "size": "3 Seater (King)",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.ecosa.com.au/nimble-sofa-bed",
+      "rrp": 1490,
+      "sale": 1043,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "ecosa-versa-sofa-bed": {
+      "name": "Ecosa Versa Modular Sofa Bed",
+      "size": "2.5 Seater, 1 module (Queen)",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.ecosa.com.au/versa-modular-sofa-bed",
+      "rrp": 1040,
+      "sale": 780,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "ecosa-bower-sofa-bed": {
+      "name": "Ecosa Bower Sofa Bed",
+      "size": "3.5 Seater (Double)",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.ecosa.com.au/bower-sofa-bed",
+      "rrp": 2740,
+      "sale": 1781,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "castlery-hamilton-sofa-bed": {
+      "name": "Castlery Hamilton 3 Seater Sofa Bed",
+      "size": "3 Seater",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.castlery.com/au/products/hamilton-3-seater-sofa-bed",
+      "rrp": 2599,
+      "sale": null,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "castlery-agnes-sofa-bed": {
+      "name": "Castlery Agnes 3 Seater Sofa Bed",
+      "size": "3 Seater",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.castlery.com/au/products/agnes-3-seater-sofa-bed",
+      "rrp": 2599,
+      "sale": null,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "ll-loft-mini-sofa-bed": {
+      "name": "Lounge Lovers Loft Mini 3 Seat Sofa Bed",
+      "size": "3 Seat",
+      "review": "best-sofa-beds-australia",
+      "source": "https://www.loungelovers.com.au/products/loft-mini-3-seat-sofa-bed-florence-natural",
+      "rrp": 1799,
+      "sale": null,
+      "method": "page",
+      "read": "2026-11-21"
+    },
+    "eva-slideaway-sofa-bed": {
+      "name": "Eva Slideaway Sofa Bed",
+      "size": "3 Seater / Double Bed",
+      "review": "best-sofa-beds-australia",
+      "source": "https://eva.com.au/products/slideaway-sofa-bed",
+      "rrp": 2550,
+      "sale": 2350,
       "method": "browser",
       "read": "2026-11-21"
     }
