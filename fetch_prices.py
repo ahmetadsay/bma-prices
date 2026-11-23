@@ -311,23 +311,29 @@ def main():
             if shelf < rrp:
                 entry["sale"] = round(shelf)
         else:
-            # No shelf reading. Prefer a recent browser reading of the same list
-            # price; failing that, the store's own compare_at sale, which is a
-            # real reading too — it just cannot see client-side discounts.
-            # A reading already carried once keeps its original date, so it can
-            # be carried again until that date is STALE_DAYS old.
+            # No shelf reading. When the store's own price is already below the
+            # list price, use it: it is today's reading, and never below what a
+            # shopper pays (Shopify charges that price; discount apps can only
+            # take more off). Sleep Republic moved its sale into the Shopify
+            # price on 20 Nov 2026, and while its pages rendered empty for the
+            # bot (18-23 Nov) it went from 25% to 30% off; a carried reading
+            # kept the old 25%. Only when the store's price shows no discount
+            # is a recent browser reading of the same list price carried
+            # (client-side discounts the .js cannot see). A reading already
+            # carried once keeps its original date, so it can be carried again
+            # until that date is STALE_DAYS old.
             old = previous.get(key)
             fresh = (
                 use_browser and old and old.get("method") in ("browser", "carried")
                 and old.get("rrp") == round(rrp)
                 and (today - dt.date.fromisoformat(old.get("read", "1970-01-01"))).days <= STALE_DAYS
             )
-            if fresh:
+            if server_price < rrp:
+                entry["sale"] = round(server_price)
+            elif fresh:
                 entry.update(sale=old.get("sale"), method="carried", read=old["read"])
                 if old.get("member"):
                     entry["member"] = True
-            elif server_price < rrp:
-                entry["sale"] = round(server_price)
 
         # A member price anyone can get with an email address, below everything
         # else on the page, is the price a reader can actually pay.
